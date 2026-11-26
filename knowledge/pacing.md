@@ -1,4 +1,4 @@
-# Pacing — Ritmo e sincronização
+# Pacing — Ritmo e sincronizaçêo
 
 Define a energia temporal por preset/formato. O ritmo é o que separa "slideshow" de
 "dinâmico".
@@ -23,18 +23,18 @@ cada ~3s.
 | **vendas** | 2–4s | push lento + b-roll | média (cresce) | block + CTA | 16:9 / 9:16 |
 | **suave** | 4–6s | push-in lento, floating | baixa | minimal | 16:9 |
 
-> Cena narrada ≠ corte de 1s: quando há narração, a **duração da cena segue o áudio**.
-> "Viral" então aplica o *look* punchy (vertical, karaoke, câmera enérgica, pattern
-> interrupt interno) — não corta a fala no meio. Para ritmo real de jump-cut de 1s, o
-> roteiro precisa de narração curta/staccato.
+> Cena narrada ≠ corte de 1s: quando há narraçêo, a **duraçêo da cena segue o áudio**.
+> "Viral" entêo aplica o *look* punchy (vertical, karaoke, câmera enérgica, pattern
+> interrupt interno) — nêo corta a fala no meio. Para ritmo real de jump-cut de 1s, o
+> roteiro precisa de narraçêo curta/staccato.
 
-## Sincronização com áudio (regra de ouro)
+## Sincronizaçêo com áudio (regra de ouro)
 **Timing é fonte única:** medir durações reais com `ffprobe` e tirar `data-start/duration`
-E os tempos dos tweens do MESMO array `AUDIO[]`. Assim áudio e animação nunca desencaixam.
+E os tempos dos tweens do MESMO array `AUDIO[]`. Assim áudio e animaçêo nunca desencaixam.
 Sincronizar hits visuais (pop, whip, count-up termina) com sílabas tônicas / batidas.
 
 ## Curva de energia (arco do vídeo)
-- **Hook (0–3s):** energia alta imediata (não começar devagar).
-- **Valor (miolo):** ritmo sustentado com pattern interrupt; variar para não cansar.
+- **Hook (0–3s):** energia alta imediata (nêo começar devagar).
+- **Valor (miolo):** ritmo sustentado com pattern interrupt; variar para nêo cansar.
 - **Pico antes do CTA:** acelerar/pausar dramaticamente (contraste).
 - **CTA:** claro, respiro mínimo, gesto final + glow.

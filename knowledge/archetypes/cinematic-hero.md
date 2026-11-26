@@ -1,14 +1,14 @@
 # Archetype: cinematic-hero
 
 Cena de abertura/hook premium: still de fundo (flux2-klein) com **push-in lento**,
-**grão de filme + color grade**, e **título revelado linha-a-linha por máscara**.
-Sensação de "filme", não de slide.
+**grêo de filme + color grade**, e **título revelado linha-a-linha por máscara**.
+Sensaçêo de "filme", nêo de slide.
 
 ## Parâmetros (do beat)
 - `headline` — frase do gancho (1–6 palavras, impactante).
 - `kicker` — rótulo curto opcional (ex.: "INEMA · NEGÓCIOS").
 - `bg` — caminho da still gerada (flux2-klein) OU gradiente se ausente.
-- `duration` — duração da cena (s), do `AUDIO[]`.
+- `duration` — duraçêo da cena (s), do `AUDIO[]`.
 
 ## Camera + recipes
 `camera: slow push-in` · recipes: `push-in`, `mask-reveal`, `grain`, `graded` (ver
@@ -56,7 +56,7 @@ Sensação de "filme", não de slide.
 const o = { p: 0 };
 const tl = gsap.timeline();
 tl.fromTo(".hero", { opacity:0 }, { opacity:1, duration:0.4, ease:"power2.out" }, 0);
-// push-in pela duração toda
+// push-in pela duraçêo toda
 tl.to(o, { p:1, duration: duration, ease:"cinematicSmooth",
   onUpdate:()=>hero.style.setProperty("--p", o.p) }, 0);
 // título por máscara linha-a-linha
@@ -67,7 +67,7 @@ tl.to(".hero-rule", { width:180, duration:0.6, ease:"power3.out" }, 0.9);
 ```
 
 ## Notas
-- `grain`/`grade` com `data-layout-ignore` (HyperFrames não acusa overflow).
+- `grain`/`grade` com `data-layout-ignore` (HyperFrames nêo acusa overflow).
 - Anima `.scene-inner`/filhos, nunca o `.clip`.
 - Sem `bg`: trocar `.hero-media img` por um gradiente `graded` (ver `motion/textures.md`).
 - Fonte `Anton` precisa estar em `assets/fonts` (ver `tokens.md`).

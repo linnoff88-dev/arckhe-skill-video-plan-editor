@@ -7,18 +7,18 @@
 ## Propósito
 
 Skill que recebe um **input** (assunto em texto, link de página/artigo, ou link de
-vídeo) → **analisa a melhor ação de edição** → gera um **plano profissional de edição de
+vídeo) → **analisa a melhor açêo de ediçêo** → gera um **plano profissional de ediçêo de
 vídeo** como dado estruturado (JSON abstrato, renderer-agnóstico) acompanhado de um resumo
 legível. O **render é um passo opcional** posterior — o plano é o entregável principal e
 deve ser usável por outros sistemas.
 
-Referência de inspiração: https://demo.reactvideoeditor.com (React + Remotion).
+Referência de inspiraçêo: https://demo.reactvideoeditor.com (React + Remotion).
 Base de código reaproveitada: fork `github.com/inematds/mcp-video` (Apache-2.0).
 
 ## Decisões de design
 
 - **Plano abstrato renderer-agnóstico (Abordagem A)** — escolhido. O plano descreve a
-  *intenção* de edição, não comandos de uma ferramenta específica. Adaptadores traduzem
+  *intençêo* de ediçêo, nêo comandos de uma ferramenta específica. Adaptadores traduzem
   para a ferramenta na hora do render.
 - **Abordagem B (plano nativo Remotion)** e **Abordagem C (pipeline mcp-video / OTIO
   `.otio`)** ficam no roadmap como v2 e v3.
@@ -28,24 +28,24 @@ Base de código reaproveitada: fork `github.com/inematds/mcp-video` (Apache-2.0)
 
 1. **Detect** — classifica o input:
    - texto puro → `topic` (assunto)
-   - URL resolvível por yt-dlp / extensão de vídeo / domínio de vídeo → `video`
+   - URL resolvível por yt-dlp / extensêo de vídeo / domínio de vídeo → `video`
    - outra URL → `page`
 2. **Ingest + Analyze**
-   - `video`: baixa (yt-dlp) → `ffprobe` (metadata) → transcrição com timestamps por
-     palavra → detecção de silêncio/cenas (Auto-Editor + ffmpeg `silencedetect`/scene) →
-     auto-legenda de trechos para localizar highlights (padrão LAVE).
+   - `video`: baixa (yt-dlp) → `ffprobe` (metadata) → transcriçêo com timestamps por
+     palavra → detecçêo de silêncio/cenas (Auto-Editor + ffmpeg `silencedetect`/scene) →
+     auto-legenda de trechos para localizar highlights (padrêo LAVE).
    - `page`: extrai texto + imagens relevantes.
    - `topic`: vira roteiro (sem ingest).
 3. **Best action** — decide o modo:
    - footage real → `highlights` / `supercut` / corte de silêncio / clipes
-   - página/assunto → vídeo gerado (motion graphics + narração)
-   - grava `best_action_rationale` no plano (transparência da decisão).
+   - página/assunto → vídeo gerado (motion graphics + narraçêo)
+   - grava `best_action_rationale` no plano (transparência da decisêo).
 4. **Preset de estilo** — `acao | suave | promo | vendas | viral` (inferido do
    assunto/objetivo ou passado explicitamente pelo usuário).
 5. **Generate** — emite `plano-edicao.json` + `RESUMO.md` (legível: cenas, cortes, ritmo,
    trilha, legendas, aspecto).
 6. **Render (opcional)** — adaptador executa o plano → MP4, extraindo frames para
-   validação humana (não há áudio audível no ambiente — usuário valida a locução).
+   validaçêo humana (nêo há áudio audível no ambiente — usuário valida a locuçêo).
 
 ## Schema do plano (`EditPlan`, pydantic, serializável em JSON)
 
@@ -90,7 +90,7 @@ Base de código reaproveitada: fork `github.com/inematds/mcp-video` (Apache-2.0)
 }
 ```
 
-Validação: `EditPlan` em pydantic 2, com guardrails reaproveitados do mcp-video (bounds de
+Validaçêo: `EditPlan` em pydantic 2, com guardrails reaproveitados do mcp-video (bounds de
 filtro, compatibilidade de merge, timing/overflow de texto, opacidade de overlay) rodando
 em **preflight** — antes de qualquer chamada FFmpeg no passo de render.
 
@@ -109,15 +109,15 @@ em **preflight** — antes de qualquer chamada FFmpeg no passo de render.
 | Unidade | Faz | Depende de |
 |---|---|---|
 | `detect` | classifica input (topic/page/video) | stdlib, yt-dlp probe |
-| `ingest/video` | download + ffprobe + transcribe + scene/silence | yt-dlp, ffmpeg, auto-editor, transcrição |
+| `ingest/video` | download + ffprobe + transcribe + scene/silence | yt-dlp, ffmpeg, auto-editor, transcriçêo |
 | `ingest/page` | extrai texto/imagens da página | fetch/parser |
 | `ingest/topic` | normaliza assunto em briefing | — |
 | `analyze` | decide best action + monta `intent` | os ingests |
 | `presets` | perfis de estilo (dataclasses) | — |
-| `plan` | schema `EditPlan` + montagem + validação/guardrails | pydantic, guardrails (mcp-video) |
+| `plan` | schema `EditPlan` + montagem + validaçêo/guardrails | pydantic, guardrails (mcp-video) |
 | `render/ffmpeg` | executa plano via FFmpeg (concat/trim/overlay/transições) | ffmpeg, ffmpeg_helpers |
 | `render/autoeditor` | corte de silêncio/highlights + export EDL | auto-editor |
-| `render/hyperframes` | cenas geradas (motion graphics/narração/CTA) | hyperframes, kokoro tts |
+| `render/hyperframes` | cenas geradas (motion graphics/narraçêo/CTA) | hyperframes, kokoro tts |
 | `SKILL.md` | orquestra o fluxo; PT-BR; padrões INEMA | — |
 
 ## Reuso do fork mcp-video
@@ -142,13 +142,13 @@ Desligável via parâmetro.
 
 - Dado qualquer input (assunto/página/vídeo), a skill emite um `plano-edicao.json` válido
   (passa no schema + guardrails) e um `RESUMO.md` legível, escolhendo e justificando a
-  melhor ação.
+  melhor açêo.
 - O plano é independente de ferramenta (pode ser consumido por outro sistema).
-- Com `--render`, o plano vira MP4 no aspecto/preset corretos, com frames de validação.
+- Com `--render`, o plano vira MP4 no aspecto/preset corretos, com frames de validaçêo.
 - Trocar o preset muda ritmo/transições/trilha/legenda/aspect sem reescrever o plano base.
 
 ## Fora de escopo (v1)
 
 - Render Remotion/OTIO (v2/v3).
-- Edição interativa via timeline UI.
+- Ediçêo interativa via timeline UI.
 - Cloud/Lambda render.

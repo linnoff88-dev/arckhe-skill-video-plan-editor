@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "video-plan-editor"
 version = "0.1.0"
-description = "Gera planos profissionais de edição de vídeo a partir de assunto/link"
+description = "Gera planos profissionais de ediçêo de vídeo a partir de assunto/link"
 requires-python = ">=3.11"
 dependencies = ["pydantic>=2.6"]
 

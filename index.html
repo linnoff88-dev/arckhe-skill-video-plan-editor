@@ -5,8 +5,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>video-plan-editor — plano profissional de edição de vídeo</title>
-<meta content="Skill Claude Code + pacote Python (vpe) que transforma um assunto ou link num plano de edição de vídeo estruturado e renderer-agnóstico (plano-edicao.json + RESUMO.md), com render opcional via HyperFrames + b-roll flux2-klein." name="description"/>
+<title>video-plan-editor — plano profissional de ediçêo de vídeo</title>
+<meta content="Skill Claude Code + pacote Python (vpe) que transforma um assunto ou link num plano de ediçêo de vídeo estruturado e renderer-agnóstico (plano-edicao.json + RESUMO.md), com render opcional via HyperFrames + b-roll flux2-klein." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
@@ -110,8 +110,8 @@
 <div class="wrap">
 <div>
 <span class="chip">Skill Claude Code + pacote Python (vpe)</span>
-<h1>Assunto ou link vira um <span class="amb">plano profissional de edição</span></h1>
-<p class="lead">Você passa um assunto ou um link (página/vídeo). A skill detecta o tipo, decide a melhor ação de edição, escolhe um preset e emite <code>plano-edicao.json</code> + <code>RESUMO.md</code> — dado estruturado, renderer-agnóstico. Render opcional já funciona: motion graphics + b-roll flux2-klein, local, sem chave de API.</p>
+<h1>Assunto ou link vira um <span class="amb">plano profissional de ediçêo</span></h1>
+<p class="lead">Você passa um assunto ou um link (página/vídeo). A skill detecta o tipo, decide a melhor açêo de ediçêo, escolhe um preset e emite <code>plano-edicao.json</code> + <code>RESUMO.md</code> — dado estruturado, renderer-agnóstico. Render opcional já funciona: motion graphics + b-roll flux2-klein, local, sem chave de API.</p>
 <div class="cta">
 <a class="btn" href="#guia">Começar o guia</a>
 <a class="btn ghost" href="https://github.com/inematds/skill-video-plan-editor" rel="noopener" target="_blank">Ver no GitHub</a>
@@ -123,7 +123,7 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
       <span class="k">→</span> (opcional) render <span class="k">→</span> MP4
 
 <span class="c"># início rápido</span>
-<span class="k">vpe scaffold</span> <span class="s">"como fazer pão caseiro"</span> --preset viral \
+<span class="k">vpe scaffold</span> <span class="s">"como fazer pêo caseiro"</span> --preset viral \
     &gt; plano-edicao.json
 <span class="k">vpe validate</span> plano-edicao.json   <span class="c"># guardrails</span>
 <span class="k">vpe resumo</span>   plano-edicao.json   <span class="c"># pra aprovar</span></pre></figure>
@@ -132,9 +132,9 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
 <section id="oque"><div class="wrap">
 <span class="chip">O que é</span>
 <h2>A camada que decide o que editar</h2>
-<p class="sub">A edição programática é fragmentada (FFmpeg, Auto-Editor, MoviePy, Remotion, HyperFrames). Falta a camada que, de linguagem natural, decide o que fazer e emite um plano limpo e portável. É isso aqui.</p>
+<p class="sub">A ediçêo programática é fragmentada (FFmpeg, Auto-Editor, MoviePy, Remotion, HyperFrames). Falta a camada que, de linguagem natural, decide o que fazer e emite um plano limpo e portável. É isso aqui.</p>
 <div class="grid g3">
-<div class="card"><h3>🧠 Decide a ação</h3><p>Classifica o input em <code>topic</code>, <code>page</code> ou <code>video</code>, analisa a melhor ação de edição e registra o porquê em <code>best_action_rationale</code>.</p></div>
+<div class="card"><h3>🧠 Decide a açêo</h3><p>Classifica o input em <code>topic</code>, <code>page</code> ou <code>video</code>, analisa a melhor açêo de ediçêo e registra o porquê em <code>best_action_rationale</code>.</p></div>
 <div class="card"><h3>📄 Plano renderer-agnóstico</h3><p><code>EditPlan</code> em JSON (pydantic) + <code>RESUMO.md</code> legível. Pode ser consumido por FFmpeg, HyperFrames, Remotion ou outros sistemas.</p></div>
 <div class="card"><h3>🎬 Render que já funciona</h3><p>Motion graphics via HyperFrames + b-roll gerado no flux2-klein. Local, determinístico, sem chave de API.</p></div>
 </div>
@@ -142,7 +142,7 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
 <section id="fluxo"><div class="wrap">
 <span class="chip">Como funciona</span>
 <h2>Do input ao MP4</h2>
-<p class="sub">5 presets de estilo (<strong>acao · suave · promo · vendas · viral</strong>) são perfis de parâmetro sobre o <em>mesmo</em> schema — trocar o preset muda ritmo, transições, trilha, legenda e aspect sem reescrever o plano base.</p>
+<p class="sub">5 presets de estilo (<strong>acao · suave · promo · vendas · viral</strong>) sêo perfis de parâmetro sobre o <em>mesmo</em> schema — trocar o preset muda ritmo, transições, trilha, legenda e aspect sem reescrever o plano base.</p>
 <div class="flow">
 <span>input</span><span class="arr">→</span>
 <span>detect</span><span class="arr">→</span>
@@ -161,13 +161,13 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
 <div class="card"><h3>🐍 Python ≥ 3.11</h3><p>Instale em editável; expõe o console script <code>vpe</code>.</p><pre><span class="k">python3 -m venv .venv</span> &amp;&amp; <span class="k">. .venv/bin/activate</span>
 <span class="k">pip install -e</span> <span class="s">".[dev]"</span></pre></div>
 <div class="card"><h3>🤖 Claude Code</h3><p>A skill orquestra o <code>vpe</code> e preenche a timeline criativa por linguagem natural.</p><pre><span class="c"># https://claude.com/claude-code</span></pre></div>
-<div class="card"><h3>🎬 Stack de render (opcional)</h3><p>Só pra renderizar: HyperFrames (Chrome+FFmpeg), Kokoro (narração) e flux2-klein (b-roll).</p><pre><span class="c"># ver knowledge/render.md</span></pre></div>
+<div class="card"><h3>🎬 Stack de render (opcional)</h3><p>Só pra renderizar: HyperFrames (Chrome+FFmpeg), Kokoro (narraçêo) e flux2-klein (b-roll).</p><pre><span class="c"># ver knowledge/render.md</span></pre></div>
 </div>
 </div></section>
 <section id="guia"><div class="wrap">
 <span class="chip">Guia de uso · passo a passo</span>
 <h2>Do assunto ao plano aprovado</h2>
-<p class="sub">Comandos reais do <code>vpe</code>. A skill (via <code>SKILL.md</code>) preenche a timeline entre o scaffold e a validação.</p>
+<p class="sub">Comandos reais do <code>vpe</code>. A skill (via <code>SKILL.md</code>) preenche a timeline entre o scaffold e a validaçêo.</p>
 <div class="step"><div class="b">1</div><div>
 <h3>Instale o pacote</h3>
 <p>Cria o ambiente e expõe o comando <code>vpe</code>.</p>
@@ -176,12 +176,12 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
 <div class="step"><div class="b">2</div><div>
 <h3>Gere o esqueleto do plano</h3>
 <p><code>vpe</code> detecta o input (assunto/página/vídeo) e aplica o preset escolhido.</p>
-<pre><span class="k">vpe scaffold</span> <span class="s">"como fazer pão caseiro"</span> --preset viral &gt; plano-edicao.json</pre>
+<pre><span class="k">vpe scaffold</span> <span class="s">"como fazer pêo caseiro"</span> --preset viral &gt; plano-edicao.json</pre>
 </div></div>
 <div class="step"><div class="b">3</div><div>
 <h3>A skill preenche a timeline</h3>
 <p>Roteiro/cenas para assunto ou página; <code>source_in/out</code> (cortes reais) para vídeo. Veja <code>examples/</code>.</p>
-<pre><span class="c"># timeline: hook → point → ... → cta (cada beat com headline/narração/legenda)</span></pre>
+<pre><span class="c"># timeline: hook → point → ... → cta (cada beat com headline/narraçêo/legenda)</span></pre>
 </div></div>
 <div class="step"><div class="b">4</div><div>
 <h3>Valide os guardrails</h3>
@@ -189,7 +189,7 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
 <pre><span class="k">vpe validate</span> plano-edicao.json  <span class="c"># exit 0 = ok</span></pre>
 </div></div>
 <div class="step"><div class="b">5</div><div>
-<h3>Gere o resumo pra aprovação</h3>
+<h3>Gere o resumo pra aprovaçêo</h3>
 <p>Documento legível com fonte, objetivo, preset e a timeline beat a beat. Render é opcional, sob pedido.</p>
 <pre><span class="k">vpe resumo</span> plano-edicao.json &gt; RESUMO.md</pre>
 </div></div>
@@ -213,12 +213,12 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
 </div>
 <div class="card">
 <h3>📝 resumo — pronto pra aprovar</h3>
-<pre><span class="c"># Pão caseiro em 20s</span>
+<pre><span class="c"># Pêo caseiro em 20s</span>
 - Objetivo: viral
 - Preset: viral (corte ~1.1s, energia 0.95)
 - Saída: 9:16, alvo 20s
 
-<span class="k">1. hook</span>  Headline: Pão em 20 segundos?!
+<span class="k">1. hook</span>  Headline: Pêo em 20 segundos?!
 <span class="k">2. point</span> Headline: 3 ingredientes
 <span class="k">3. cta</span>   Headline: INEMA.CLUB</pre>
 <p style="margin-top:10px">O mesmo plano vira um markdown legível com a timeline beat a beat.</p>
@@ -228,11 +228,11 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
 <section id="roadmap"><div class="wrap">
 <span class="chip">Roadmap</span>
 <h2>O que já funciona e o que vem</h2>
-<p class="sub">Schema do plano: <code>meta · source · intent · style · output · timeline[] · render</code>. Integra com o <a href="https://inematds.github.io/mdd/">MDD</a> para a direção cinematográfica dos beats generativos.</p>
-<div class="phase"><div class="tag">✅ Pronto</div><div class="d"><strong>Núcleo gerador de plano</strong><span>Schema (pydantic), presets, detect, validação, resumo, CLI <code>vpe</code>. 35 testes.</span></div></div>
+<p class="sub">Schema do plano: <code>meta · source · intent · style · output · timeline[] · render</code>. Integra com o <a href="https://inematds.github.io/mdd/">MDD</a> para a direçêo cinematográfica dos beats generativos.</p>
+<div class="phase"><div class="tag">✅ Pronto</div><div class="d"><strong>Núcleo gerador de plano</strong><span>Schema (pydantic), presets, detect, validaçêo, resumo, CLI <code>vpe</code>. 35 testes.</span></div></div>
 <div class="phase"><div class="tag">✅ Pronto</div><div class="d"><strong>Base de conhecimento</strong><span>strategy / camera / storyboard / prompting / motion / archetypes — com os princípios do MDD destilados.</span></div></div>
 <div class="phase"><div class="tag">✅ Pronto</div><div class="d"><strong>Render motion graphics + b-roll</strong><span>HyperFrames (Chrome+FFmpeg) + b-roll flux2-klein, local e determinístico. Caso de referência: hormozi13 em 9:16 e 16:9.</span></div></div>
-<div class="phase"><div class="tag">⏳ Próximo</div><div class="d"><strong>Ingest de footage real</strong><span>yt-dlp + ffprobe + transcrição + corte por silêncio/cena (Auto-Editor) + auto-highlights.</span></div></div>
+<div class="phase"><div class="tag">⏳ Próximo</div><div class="d"><strong>Ingest de footage real</strong><span>yt-dlp + ffprobe + transcriçêo + corte por silêncio/cena (Auto-Editor) + auto-highlights.</span></div></div>
 <div class="phase"><div class="tag">⏳ Futuro</div><div class="d"><strong>Clipes generativos + Remotion / OTIO</strong><span>Sora/Veo/Kling dirigidos pelo MDD; render nativo Remotion e export <code>.otio</code> pra NLEs.</span></div></div>
 </div></section>
 <footer>

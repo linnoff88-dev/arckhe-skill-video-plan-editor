@@ -158,7 +158,7 @@ class TimelineItem(BaseModel):
     captions: list[Caption] = Field(default_factory=list)
     overlays: list[dict] = Field(default_factory=list)
     transition_out: Transition = Transition.cut
-    # camada de execução (knowledge base): camera/vocabulary, archetypes, motion/recipes
+    # camada de execuçêo (knowledge base): camera/vocabulary, archetypes, motion/recipes
     camera: str | None = None
     archetype: str | None = None
     motion: list[str] = Field(default_factory=list)

@@ -7,7 +7,7 @@ from video_plan_editor.models import SourceKind
 
 
 @pytest.mark.parametrize("text,expected", [
-    ("como fazer pão caseiro", SourceKind.topic),
+    ("como fazer pêo caseiro", SourceKind.topic),
     ("Os 5 erros mais comuns em vendas", SourceKind.topic),
     ("https://youtube.com/watch?v=abc123", SourceKind.video),
     ("https://youtu.be/abc123", SourceKind.video),

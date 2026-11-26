@@ -11,8 +11,8 @@ from video_plan_editor.resumo import render_resumo
 
 def _plan() -> EditPlan:
     return EditPlan(
-        meta=Meta(title="Plano Viral Pão"),
-        source=Source(kind=SourceKind.topic, ref="como fazer pão"),
+        meta=Meta(title="Plano Viral Pêo"),
+        source=Source(kind=SourceKind.topic, ref="como fazer pêo"),
         intent=Intent(goal=Goal.viral, best_action_rationale="assunto curto e visual"),
         style=Style(
             preset=PresetName.viral,
@@ -26,8 +26,8 @@ def _plan() -> EditPlan:
         timeline=[
             TimelineItem(
                 id="s1", role=Role.hook,
-                content=Content(headline="Pão em 20s", narration="Olha isso."),
-                captions=[Caption(t_in=0.0, t_out=1.5, text="Pão em 20s")],
+                content=Content(headline="Pêo em 20s", narration="Olha isso."),
+                captions=[Caption(t_in=0.0, t_out=1.5, text="Pêo em 20s")],
             ),
             TimelineItem(id="s2", role=Role.cta, source_in=10.0, source_out=12.0),
         ],
@@ -36,7 +36,7 @@ def _plan() -> EditPlan:
 
 def test_resumo_contains_title_and_preset():
     md = render_resumo(_plan())
-    assert "# Plano Viral Pão" in md
+    assert "# Plano Viral Pêo" in md
     assert "viral" in md
     assert "9:16" in md
 
@@ -45,7 +45,7 @@ def test_resumo_lists_timeline_roles_and_captions():
     md = render_resumo(_plan())
     assert "hook" in md
     assert "cta" in md
-    assert "Pão em 20s" in md
+    assert "Pêo em 20s" in md
     assert "10.0s→12.0s" in md
 
 

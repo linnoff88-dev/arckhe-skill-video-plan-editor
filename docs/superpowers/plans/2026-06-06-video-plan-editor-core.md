@@ -2,18 +2,18 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Construir o núcleo Python que transforma um input (assunto/link) num plano de edição de vídeo tipado (`EditPlan`), valida-o com guardrails, e o expõe via CLI (`vpe scaffold|validate|resumo`).
+**Goal:** Construir o núcleo Python que transforma um input (assunto/link) num plano de ediçêo de vídeo tipado (`EditPlan`), valida-o com guardrails, e o expõe via CLI (`vpe scaffold|validate|resumo`).
 
-**Architecture:** Pacote Python `video_plan_editor` com módulos de responsabilidade única: `models` (schema pydantic), `presets` (perfis de estilo), `detect` (classifica input), `validate` (guardrails sobre o plano), `resumo` (plano→markdown), `builder` (monta o esqueleto do plano), `cli` (argparse). O plano é o dado central; o preenchimento criativo da timeline é feito pela orquestração da skill (`SKILL.md`), não por este código. Ingest de vídeo real e render são planos posteriores.
+**Architecture:** Pacote Python `video_plan_editor` com módulos de responsabilidade única: `models` (schema pydantic), `presets` (perfis de estilo), `detect` (classifica input), `validate` (guardrails sobre o plano), `resumo` (plano→markdown), `builder` (monta o esqueleto do plano), `cli` (argparse). O plano é o dado central; o preenchimento criativo da timeline é feito pela orquestraçêo da skill (`SKILL.md`), nêo por este código. Ingest de vídeo real e render sêo planos posteriores.
 
 **Tech Stack:** Python ≥3.11, pydantic 2, pytest, hatchling. Console script `vpe`.
 
 ---
 
-## Escopo / decomposição
+## Escopo / decomposiçêo
 
 - **Fase 1 (este plano):** núcleo gerador de plano — Python puro, totalmente testável.
-- **Fase 2 (plano futuro):** ingest de vídeo real — yt-dlp, ffprobe, transcrição, detecção de silêncio/cena (Auto-Editor), auto-highlights.
+- **Fase 2 (plano futuro):** ingest de vídeo real — yt-dlp, ffprobe, transcriçêo, detecçêo de silêncio/cena (Auto-Editor), auto-highlights.
 - **Fase 3 (plano futuro):** adaptadores de render — FFmpeg, HyperFrames; export EDL/OTIO (v3).
 
 ## File Structure
@@ -30,7 +30,7 @@
 | `video_plan_editor/builder.py` | `scaffold_plan()` monta o esqueleto do plano |
 | `video_plan_editor/cli.py` | `main()` — subcomandos scaffold/validate/resumo |
 | `tests/test_*.py` | um arquivo de teste por módulo |
-| `SKILL.md` | orquestração (como a skill usa o pacote) |
+| `SKILL.md` | orquestraçêo (como a skill usa o pacote) |
 
 ---
 
@@ -51,7 +51,7 @@ build-backend = "hatchling.build"
 [project]
 name = "video-plan-editor"
 version = "0.1.0"
-description = "Gera planos profissionais de edição de vídeo a partir de assunto/link"
+description = "Gera planos profissionais de ediçêo de vídeo a partir de assunto/link"
 requires-python = ">=3.11"
 dependencies = ["pydantic>=2.6"]
 
@@ -93,7 +93,7 @@ Conteúdo inicial:
 - [ ] **Step 4: Instalar em modo dev e confirmar pytest disponível**
 
 Run: `python -m venv .venv && . .venv/bin/activate && pip install -e ".[dev]" && pytest --version`
-Expected: imprime a versão do pytest (ex.: `pytest 8.x`).
+Expected: imprime a versêo do pytest (ex.: `pytest 8.x`).
 
 - [ ] **Step 5: Commit**
 
@@ -131,7 +131,7 @@ from video_plan_editor.models import (
 def _minimal_plan() -> EditPlan:
     return EditPlan(
         meta=Meta(title="Teste"),
-        source=Source(kind=SourceKind.topic, ref="como fazer pão"),
+        source=Source(kind=SourceKind.topic, ref="como fazer pêo"),
         intent=Intent(goal=Goal.explainer, best_action_rationale="assunto curto"),
         style=Style(
             preset=PresetName.suave,
@@ -145,8 +145,8 @@ def _minimal_plan() -> EditPlan:
         timeline=[
             TimelineItem(
                 id="s1", role=Role.hook,
-                content=Content(headline="Pão em casa", narration="Vamos começar."),
-                captions=[Caption(t_in=0.0, t_out=2.0, text="Pão em casa")],
+                content=Content(headline="Pêo em casa", narration="Vamos começar."),
+                captions=[Caption(t_in=0.0, t_out=2.0, text="Pêo em casa")],
             )
         ],
     )
@@ -510,7 +510,7 @@ git commit -m "feat: presets de estilo (acao/suave/promo/vendas/viral) + style_f
 
 ---
 
-### Task 3: Detecção de input (`detect.py`)
+### Task 3: Detecçêo de input (`detect.py`)
 
 **Files:**
 - Create: `video_plan_editor/detect.py`
@@ -529,7 +529,7 @@ from video_plan_editor.models import SourceKind
 
 
 @pytest.mark.parametrize("text,expected", [
-    ("como fazer pão caseiro", SourceKind.topic),
+    ("como fazer pêo caseiro", SourceKind.topic),
     ("Os 5 erros mais comuns em vendas", SourceKind.topic),
     ("https://youtube.com/watch?v=abc123", SourceKind.video),
     ("https://youtu.be/abc123", SourceKind.video),
@@ -596,7 +596,7 @@ git commit -m "feat: classify_input (topic/page/video) por URL e domínio"
 
 ---
 
-### Task 4: Validação / guardrails (`validate.py`)
+### Task 4: Validaçêo / guardrails (`validate.py`)
 
 **Files:**
 - Create: `video_plan_editor/validate.py`
@@ -773,8 +773,8 @@ from video_plan_editor.resumo import render_resumo
 
 def _plan() -> EditPlan:
     return EditPlan(
-        meta=Meta(title="Plano Viral Pão"),
-        source=Source(kind=SourceKind.topic, ref="como fazer pão"),
+        meta=Meta(title="Plano Viral Pêo"),
+        source=Source(kind=SourceKind.topic, ref="como fazer pêo"),
         intent=Intent(goal=Goal.viral, best_action_rationale="assunto curto e visual"),
         style=Style(
             preset=PresetName.viral,
@@ -788,8 +788,8 @@ def _plan() -> EditPlan:
         timeline=[
             TimelineItem(
                 id="s1", role=Role.hook,
-                content=Content(headline="Pão em 20s", narration="Olha isso."),
-                captions=[Caption(t_in=0.0, t_out=1.5, text="Pão em 20s")],
+                content=Content(headline="Pêo em 20s", narration="Olha isso."),
+                captions=[Caption(t_in=0.0, t_out=1.5, text="Pêo em 20s")],
             ),
             TimelineItem(id="s2", role=Role.cta, source_in=10.0, source_out=12.0),
         ],
@@ -798,7 +798,7 @@ def _plan() -> EditPlan:
 
 def test_resumo_contains_title_and_preset():
     md = render_resumo(_plan())
-    assert "# Plano Viral Pão" in md
+    assert "# Plano Viral Pêo" in md
     assert "viral" in md
     assert "9:16" in md
 
@@ -807,7 +807,7 @@ def test_resumo_lists_timeline_roles_and_captions():
     md = render_resumo(_plan())
     assert "hook" in md
     assert "cta" in md
-    assert "Pão em 20s" in md
+    assert "Pêo em 20s" in md
     assert "10.0s→12.0s" in md
 
 
@@ -836,7 +836,7 @@ def render_resumo(plan: EditPlan) -> str:
     lines.append("")
     lines.append(f"- **Fonte:** {plan.source.kind.value} — {plan.source.ref}")
     lines.append(f"- **Objetivo:** {plan.intent.goal.value}")
-    lines.append(f"- **Por que essa ação:** {plan.intent.best_action_rationale}")
+    lines.append(f"- **Por que essa açêo:** {plan.intent.best_action_rationale}")
     lines.append(
         f"- **Preset:** {plan.style.preset.value} "
         f"(corte ~{plan.style.pacing.avg_cut_seconds}s, energia {plan.style.pacing.energy})"
@@ -855,7 +855,7 @@ def render_resumo(plan: EditPlan) -> str:
         if item.content and item.content.headline:
             lines.append(f"   - Headline: {item.content.headline}")
         if item.content and item.content.narration:
-            lines.append(f"   - Narração: {item.content.narration}")
+            lines.append(f"   - Narraçêo: {item.content.narration}")
         for cap in item.captions:
             lines.append(f"   - Legenda [{cap.t_in:.1f}-{cap.t_out:.1f}]: {cap.text}")
     return "\n".join(lines) + "\n"
@@ -893,7 +893,7 @@ from video_plan_editor.presets import PRESETS
 
 
 def test_scaffold_detects_topic_and_applies_preset():
-    plan = scaffold_plan("como fazer pão caseiro", PresetName.suave)
+    plan = scaffold_plan("como fazer pêo caseiro", PresetName.suave)
     assert plan.source.kind == SourceKind.topic
     assert plan.style.preset == PresetName.suave
     assert plan.output.aspect == PRESETS[PresetName.suave].default_aspect
@@ -1014,7 +1014,7 @@ from video_plan_editor.models import PresetName, EditPlan, TimelineItem, Role
 
 
 def test_scaffold_prints_valid_json(capsys):
-    rc = main(["scaffold", "como fazer pão", "--preset", "suave"])
+    rc = main(["scaffold", "como fazer pêo", "--preset", "suave"])
     out = capsys.readouterr().out
     assert rc == 0
     data = json.loads(out)
@@ -1131,7 +1131,7 @@ Expected: PASS (todos os testes das Tasks 1–7).
 
 - [ ] **Step 6: Smoke test do console script**
 
-Run: `vpe scaffold "como fazer pão" --preset viral`
+Run: `vpe scaffold "como fazer pêo" --preset viral`
 Expected: imprime um JSON com `"preset": "viral"` e `"kind": "topic"`.
 
 - [ ] **Step 7: Commit**
@@ -1143,24 +1143,24 @@ git commit -m "feat: CLI vpe (scaffold/validate/resumo)"
 
 ---
 
-### Task 8: SKILL.md (orquestração da skill)
+### Task 8: SKILL.md (orquestraçêo da skill)
 
 **Files:**
 - Create: `SKILL.md`
 
-Este arquivo não tem teste automatizado; é a interface da skill. A validação é a revisão humana + o smoke test do CLI da Task 7.
+Este arquivo nêo tem teste automatizado; é a interface da skill. A validaçêo é a revisêo humana + o smoke test do CLI da Task 7.
 
 - [ ] **Step 1: Escrever `SKILL.md`**
 
 ````markdown
 ---
 name: video-plan-editor
-description: Gera um plano profissional de edição de vídeo a partir de um assunto ou um link (página/vídeo). Detecta o tipo de input, analisa a melhor ação de edição, escolhe um preset de estilo (acao/suave/promo/vendas/viral) e emite plano-edicao.json + RESUMO.md. Render é opcional (planos futuros). Use quando o usuário der um assunto/link e pedir "plano de edição", "editar vídeo", "clipe", "corte para Reels/TikTok", "vídeo promocional/de vendas", ou um plano de edição de vídeo.
+description: Gera um plano profissional de ediçêo de vídeo a partir de um assunto ou um link (página/vídeo). Detecta o tipo de input, analisa a melhor açêo de ediçêo, escolhe um preset de estilo (acao/suave/promo/vendas/viral) e emite plano-edicao.json + RESUMO.md. Render é opcional (planos futuros). Use quando o usuário der um assunto/link e pedir "plano de ediçêo", "editar vídeo", "clipe", "corte para Reels/TikTok", "vídeo promocional/de vendas", ou um plano de ediçêo de vídeo.
 ---
 
 # video-plan-editor
 
-Transforma um **assunto** ou **link** num **plano profissional de edição** (JSON
+Transforma um **assunto** ou **link** num **plano profissional de ediçêo** (JSON
 renderer-agnóstico) + resumo legível. O plano é o entregável; o render é opcional.
 
 ## Pré-requisitos
@@ -1172,23 +1172,23 @@ renderer-agnóstico) + resumo legível. O plano é o entregável; o render é op
    ```bash
    vpe scaffold "<assunto ou link>" --preset <acao|suave|promo|vendas|viral> > plano-edicao.json
    ```
-   Se o usuário não pediu preset, escolha o mais adequado ao objetivo (ver tabela abaixo)
+   Se o usuário nêo pediu preset, escolha o mais adequado ao objetivo (ver tabela abaixo)
    e diga qual escolheu e por quê.
 
-2. **Analisar a melhor ação** — com base no `source.kind`:
+2. **Analisar a melhor açêo** — com base no `source.kind`:
    - `topic`/`page`: o objetivo é um vídeo gerado (explainer/promo/vendas). Escreva um
      roteiro curto e preencha `timeline` com cenas (`role`: hook→point(s)→cta), cada uma
      com `content.headline`, `content.narration` e `captions`.
    - `video`: o objetivo é cortar footage real (highlights/supercut/viral). Preencha
      `timeline` com `source_in`/`source_out` por trecho relevante + `captions`.
-   Atualize `intent.best_action_rationale` explicando a decisão.
+   Atualize `intent.best_action_rationale` explicando a decisêo.
 
 3. **Validar** — rode os guardrails antes de qualquer render:
    ```bash
    vpe validate plano-edicao.json
    ```
    Corrija todos os itens `[error]` (timeline vazia, ranges invertidos, timing de
-   legenda). `[warning]` (ex.: sem hook) são recomendações.
+   legenda). `[warning]` (ex.: sem hook) sêo recomendações.
 
 4. **Resumo** — gere o documento legível para o usuário aprovar:
    ```bash
@@ -1196,7 +1196,7 @@ renderer-agnóstico) + resumo legível. O plano é o entregável; o render é op
    ```
    Mostre o RESUMO ao usuário.
 
-5. **Render (opcional)** — ainda não implementado nesta fase. Quando o usuário pedir o
+5. **Render (opcional)** — ainda nêo implementado nesta fase. Quando o usuário pedir o
    MP4, isso será coberto pelos planos de Fase 2 (ingest de vídeo) e Fase 3 (adaptadores
    FFmpeg/HyperFrames). Por ora, entregue o plano + resumo.
 
@@ -1211,10 +1211,10 @@ renderer-agnóstico) + resumo legível. O plano é o entregável; o render é op
 | viral  | 0.8–1.5s | jump cut | alta | karaoke | 9:16 | TikTok/Instagram |
 
 ## Regras de ouro
-- O plano é **renderer-agnóstico**: descreva intenção (cenas, cortes, ritmo, legendas),
-  não comandos FFmpeg.
+- O plano é **renderer-agnóstico**: descreva intençêo (cenas, cortes, ritmo, legendas),
+  nêo comandos FFmpeg.
 - Sempre rode `vpe validate` e zere os `[error]` antes de apresentar.
-- Sempre mostre o `RESUMO.md` e peça aprovação antes de qualquer render futuro.
+- Sempre mostre o `RESUMO.md` e peça aprovaçêo antes de qualquer render futuro.
 - Identidade default PT-BR; CTA INEMA.CLUB como última cena quando for vídeo gerado
   (consistente com as skills video-explicativo / videos-cursos-inema), desligável a pedido.
 ````
@@ -1223,7 +1223,7 @@ renderer-agnóstico) + resumo legível. O plano é o entregável; o render é op
 
 ```bash
 git add SKILL.md
-git commit -m "docs: SKILL.md (orquestração detect->plano->validate->resumo)"
+git commit -m "docs: SKILL.md (orquestraçêo detect->plano->validate->resumo)"
 ```
 
 ---
@@ -1235,11 +1235,11 @@ git commit -m "docs: SKILL.md (orquestração detect->plano->validate->resumo)"
 - Best action + `intent.best_action_rationale` → builder (Task 6) + SKILL.md (Task 8) ✓
 - Presets (acao/suave/promo/vendas/viral) → Task 2 ✓
 - Schema `EditPlan` abstrato/serializável → Task 1 ✓
-- Validação/guardrails preflight → Task 4 ✓
+- Validaçêo/guardrails preflight → Task 4 ✓
 - Resumo legível → Task 5 ✓
 - CLI (gera plano + resumo) → Task 7 ✓
 - Identidade PT-BR/INEMA → SKILL.md (Task 8) ✓
-- **Fora desta fase (declarado):** ingest de vídeo real (Fase 2), render FFmpeg/HyperFrames (Fase 3), Remotion/OTIO (v2/v3). Coberto pela seção Escopo. ✓
+- **Fora desta fase (declarado):** ingest de vídeo real (Fase 2), render FFmpeg/HyperFrames (Fase 3), Remotion/OTIO (v2/v3). Coberto pela seçêo Escopo. ✓
 
 **Placeholder scan:** sem TBD/TODO; todo passo de código tem código completo. ✓
 

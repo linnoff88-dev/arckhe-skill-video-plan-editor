@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "meta": { "title": "Pão caseiro em 20s", "language": "pt-BR" },
-  "source": { "kind": "topic", "ref": "como fazer pão caseiro rápido" },
+  "meta": { "title": "Pêo caseiro em 20s", "language": "pt-BR" },
+  "source": { "kind": "topic", "ref": "como fazer pêo caseiro rápido" },
   "intent": {
     "goal": "viral",
     "best_action_rationale": "Assunto curto, visual e com payoff imediato — ideal para vídeo gerado vertical com cortes rápidos."
@@ -19,8 +19,8 @@
     {
       "id": "s1",
       "role": "hook",
-      "content": { "headline": "Pão em 20 segundos?!", "narration": "Olha só que rápido." },
-      "captions": [{ "t_in": 0.0, "t_out": 1.5, "text": "Pão em 20s?!" }],
+      "content": { "headline": "Pêo em 20 segundos?!", "narration": "Olha só que rápido." },
+      "captions": [{ "t_in": 0.0, "t_out": 1.5, "text": "Pêo em 20s?!" }],
       "transition_out": "zoom"
     },
     {

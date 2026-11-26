@@ -8,7 +8,7 @@ from video_plan_editor.models import PresetName, EditPlan, TimelineItem, Role
 
 
 def test_scaffold_prints_valid_json(capsys):
-    rc = main(["scaffold", "como fazer pão", "--preset", "suave"])
+    rc = main(["scaffold", "como fazer pêo", "--preset", "suave"])
     out = capsys.readouterr().out
     assert rc == 0
     data = json.loads(out)

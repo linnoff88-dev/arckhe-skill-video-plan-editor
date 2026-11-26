@@ -1,6 +1,6 @@
 # Motion — Recipes (GSAP/CSS, time-driven, determinístico)
 
-Receitas nomeadas. Todas dirigidas por **tempo** (timeline GSAP), não scroll. Verificadas
+Receitas nomeadas. Todas dirigidas por **tempo** (timeline GSAP), nêo scroll. Verificadas
 contra docs GSAP e tutoriais Codrops. Prioridade SVG/CSS/GSAP (determinístico no render);
 WebGL é fase 2.
 
@@ -72,7 +72,7 @@ gsap.fromTo(barObj, { p: 0 }, { p: 1, duration: 0.8, ease: "cinematicSmooth",
 gsap.from(".underline", { scaleX: 0, transformOrigin: "left", duration: 0.5, ease: "power3.out" });
 ```
 
-## whip-pan (transição com motion blur)
+## whip-pan (transiçêo com motion blur)
 ```js
 const tl = gsap.timeline();
 tl.to(sceneA, { xPercent: -30, filter: "blur(14px)", opacity: 0, duration: 0.18, ease: "expo.in" })
@@ -80,7 +80,7 @@ tl.to(sceneA, { xPercent: -30, filter: "blur(14px)", opacity: 0, duration: 0.18,
                   { xPercent: 0, filter: "blur(0px)", opacity: 1, duration: 0.22, ease: "expo.out" });
 ```
 
-## knockout-text (texto como máscara revelando imagem/padrão)
+## knockout-text (texto como máscara revelando imagem/padrêo)
 SVG `clip-path` com `<text>`; anima o fundo atrás ou o bloco de texto.
 ```html
 <svg viewBox="0 0 1080 1920"><defs><clipPath id="ko"><text x="50%" y="50%"
@@ -91,6 +91,6 @@ SVG `clip-path` com `<text>`; anima o fundo atrás ou o bloco de texto.
 ## distortion (warp líquido, SVG)
 `feTurbulence` → `feDisplacementMap` (ver `textures.md`); animar `scale` do displacement.
 
-## Regra de aplicação
-Cada beat escolhe 1–3 recipes coerentes com a `camera` e a `emotion`. Não empilhar tudo —
+## Regra de aplicaçêo
+Cada beat escolhe 1–3 recipes coerentes com a `camera` e a `emotion`. Nêo empilhar tudo —
 movimento com propósito (ver `camera/vocabulary.md`).

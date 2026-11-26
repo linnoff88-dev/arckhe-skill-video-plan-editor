@@ -1,39 +1,39 @@
 # Base de Conhecimento — video-plan-editor
 
 Vocabulário e padrões que a skill usa para **criar** planos de vídeo de alta
-performance com talento próprio — não para copiar um vídeo de referência. A composição
-de cada vídeo é autoral; estes arquivos são os blocos de construção.
+performance com talento próprio — nêo para copiar um vídeo de referência. A composiçêo
+de cada vídeo é autoral; estes arquivos sêo os blocos de construçêo.
 
 ## Como a skill usa esta base (ordem de raciocínio)
 
-1. **`strategy/`** decide a NARRATIVA — ângulo, dor/desejo, emoção (Facts/Feelings/Fun),
-   gancho, estrutura de beats, retenção, CTA. É o cérebro do plano.
-2. **`camera/`** traduz a intenção de cada beat numa linguagem de câmera (push-in, orbit,
+1. **`strategy/`** decide a NARRATIVA — ângulo, dor/desejo, emoçêo (Facts/Feelings/Fun),
+   gancho, estrutura de beats, retençêo, CTA. É o cérebro do plano.
+2. **`camera/`** traduz a intençêo de cada beat numa linguagem de câmera (push-in, orbit,
    whip-pan, DOF…). É a **ponte**: a mesma linguagem vira prompt de imagem/vídeo OU
    parâmetro de motion graphics.
 3. **`prompting/`** expande cada beat num prompt cinematográfico (para gerar b-roll com
    flux2-klein hoje; Sora/Veo/Kling no futuro).
-4. **`motion/`** + **`archetypes/`** executam o VISUAL — easing cinematográfico, grão de
+4. **`motion/`** + **`archetypes/`** executam o VISUAL — easing cinematográfico, grêo de
    filme, reveals, tipografia, cenas prontas em HTML/CSS/GSAP.
 5. **`tokens.md` / `pacing.md`** mantêm identidade e ritmo consistentes.
 
 O `EditPlan` (CLI `vpe`) amarra tudo: cada item da timeline é um **beat** com
 `{ tempo, papel narrativo, camera, render_kind, gen_prompt, motion recipe }`.
 
-## Pilar de render (decisão atual)
+## Pilar de render (decisêo atual)
 
 **Híbrido leve, local e grátis:**
 - `render_kind: motion` → cena de tipografia/diagrama/UI em GSAP (motion graphics).
 - `render_kind: generated_still` → b-roll gerado com **flux2-klein** + recipes
-  cinematográficas (push-in, parallax, grão) para dar cara de footage a uma imagem.
+  cinematográficas (push-in, parallax, grêo) para dar cara de footage a uma imagem.
 - `render_kind: generated_clip` → **fase 2 opcional** (Sora/Veo/Kling) se houver acesso.
 
-## Adaptação importante
+## Adaptaçêo importante
 
 As técnicas premium da pesquisa nasceram **scroll-driven** (ScrollSmoother) e algumas em
 WebGL. Nosso render é **time-driven e determinístico** (HyperFrames = Chrome headless
-capturando frames). Regra: o mesmo padrão "um valor 0→1 dirige tudo", mas guiado pela
-**timeline/tempo**, não pelo scroll. Priorizar SVG/CSS/GSAP; WebGL é fase 2.
+capturando frames). Regra: o mesmo padrêo "um valor 0→1 dirige tudo", mas guiado pela
+**timeline/tempo**, nêo pelo scroll. Priorizar SVG/CSS/GSAP; WebGL é fase 2.
 
 ## Índice
 - `strategy/` — frameworks, hooks, cases, formats, templates, matrix, checklist

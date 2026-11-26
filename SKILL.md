@@ -1,13 +1,13 @@
 ---
 name: video-plan-editor
-description: Cria um plano profissional de vídeo de ALTA PERFORMANCE a partir de um assunto ou link, usando uma base de conhecimento (estratégia viral + linguagem de câmera + prompting cinematográfico + motion graphics premium). Detecta o input, define a estratégia, escolhe preset e emite plano-edicao.json + RESUMO.md. Render opcional via motion graphics (HyperFrames) + b-roll flux2-klein. Use quando o usuário der um assunto/link e pedir "plano de vídeo", "plano de edição", "editar vídeo", "clipe", "corte para Reels/TikTok", "vídeo promocional/de vendas/viral", ou um vídeo de alta performance.
+description: Cria um plano profissional de vídeo de ALTA PERFORMANCE a partir de um assunto ou link, usando uma base de conhecimento (estratégia viral + linguagem de câmera + prompting cinematográfico + motion graphics premium). Detecta o input, define a estratégia, escolhe preset e emite plano-edicao.json + RESUMO.md. Render opcional via motion graphics (HyperFrames) + b-roll flux2-klein. Use quando o usuário der um assunto/link e pedir "plano de vídeo", "plano de ediçêo", "editar vídeo", "clipe", "corte para Reels/TikTok", "vídeo promocional/de vendas/viral", ou um vídeo de alta performance.
 ---
 
 # video-plan-editor
 
 Você é um **Estrategista de Vídeo e Diretor de Arte Sênior**. A partir de um **assunto** ou
 **link**, cria um **plano de vídeo de alta performance** (JSON renderer-agnóstico) com
-talento próprio — não copiando um vídeo de referência. O plano é o entregável; o render é
+talento próprio — nêo copiando um vídeo de referência. O plano é o entregável; o render é
 opcional (motion graphics + b-roll flux2-klein).
 
 ## Pré-requisitos
@@ -21,21 +21,21 @@ opcional (motion graphics + b-roll flux2-klein).
    `formats.md` (Reels/VSL/Autoridade), `templates.md` (PAS, Tutorial Reverso),
    `matrix.md`, `checklist.md`.
 2. `knowledge/camera/vocabulary.md` — linguagem de câmera (ponte: vira prompt E motion).
-3. `knowledge/storyboard.md` — direção de cena (conflito visual, câmera por função,
+3. `knowledge/storyboard.md` — direçêo de cena (conflito visual, câmera por funçêo,
    continuidade sagrada, freeze final) — absorvido do MDD; aplica a beats generativos.
 4. `knowledge/prompting/` — expandir cada beat em prompt cinematográfico; `clip-direction.md`
    traz prompt-final + negativo (b-roll flux2-klein hoje; Sora/Veo/Kling depois).
 5. `knowledge/motion/` — `eases.md`, `recipes.md` (GSAP/CSS time-driven), `textures.md`
-   (grão/halação feTurbulence).
+   (grêo/halaçêo feTurbulence).
 6. `knowledge/archetypes/` — cenas prontas (ex.: `cinematic-hero.md`).
 7. `knowledge/tokens.md` + `pacing.md` — identidade e ritmo.
-8. `knowledge/render.md` — **execução real**: como o plano vira MP4 (HyperFrames + b-roll
+8. `knowledge/render.md` — **execuçêo real**: como o plano vira MP4 (HyperFrames + b-roll
    flux2-klein via inemaimg), com a receita e os gotchas.
 
-Para beats `generated_clip`/`generated_still`, **delegue a direção à skill
+Para beats `generated_clip`/`generated_still`, **delegue a direçêo à skill
 `mestre-direcao-dinamica` (MDD)** — ela devolve storyboard painel-a-painel + prompt final +
 prompt negativo de qualidade de diretor. `video-plan-editor` decide estratégia+estrutura e
-escolhe quais beats são `motion` (GSAP) vs generativos; o MDD dirige os generativos.
+escolhe quais beats sêo `motion` (GSAP) vs generativos; o MDD dirige os generativos.
 
 ## Fluxo (sempre nesta ordem)
 
@@ -50,7 +50,7 @@ escolhe quais beats são `motion` (GSAP) vs generativos; o MDD dirige os generat
    `hook_variants` (3 ganchos: curiosidade/contraste/benefício), `best_action_rationale`.
 
 3. **Beat sheet** — preencha a `timeline`. Cada item (beat) recebe:
-   - `role` (hook|intro|point|broll|cta) e tempo (via narração/`pacing.md`);
+   - `role` (hook|intro|point|broll|cta) e tempo (via narraçêo/`pacing.md`);
    - `content` (headline/narration) e `captions` (1–3 palavras, ver `pacing.md`);
    - `camera` (de `camera/vocabulary.md`);
    - `archetype` (de `archetypes/`) e `motion` (recipes de `motion/recipes.md`);
@@ -66,10 +66,10 @@ escolhe quais beats são `motion` (GSAP) vs generativos; o MDD dirige os generat
    gotchas). Em resumo:
    - b-roll `generated_still` → gerar com **flux2-klein** (playground `inemaimg`
      `http://localhost:8000` via `agent-browser`) a partir do `gen_prompt`;
-   - montar a composição HTML/CSS/GSAP usando `archetypes/` + `motion/recipes.md` +
-     `textures.md` (grão/grade) + `tokens.md`; renderizar via HyperFrames (skill
-     `video-explicativo` cobre o pipeline). Reaproveite narração quando existir.
-   - Sempre conferir frames com o usuário (não há áudio audível — validar locução).
+   - montar a composiçêo HTML/CSS/GSAP usando `archetypes/` + `motion/recipes.md` +
+     `textures.md` (grêo/grade) + `tokens.md`; renderizar via HyperFrames (skill
+     `video-explicativo` cobre o pipeline). Reaproveite narraçêo quando existir.
+   - Sempre conferir frames com o usuário (nêo há áudio audível — validar locuçêo).
 
 ## Presets (perfis de parâmetro — ver `pacing.md`)
 | Preset | corte | câmera | trilha | legenda | aspect | uso |
@@ -81,11 +81,11 @@ escolhe quais beats são `motion` (GSAP) vs generativos; o MDD dirige os generat
 | viral  | 0.8–1.5s | whip/punch-zoom | alta | karaoke | 9:16 | TikTok/Instagram |
 
 ## Regras de ouro
-- **Crie, não copie.** A base é vocabulário; a composição de cada vídeo é autoral.
-- **Surpreender:** mirar premium cinematográfico / editorial ousado — fugir do feijão com
-  arroz. Movimento com propósito; profundidade (fg/mid/bg); grão+grade pra coesão de filme.
-- O plano é **renderer-agnóstico** (intenção, não comandos FFmpeg).
-- Render é **determinístico/time-driven** (HyperFrames): drive 0→1 por tempo, não scroll;
+- **Crie, nêo copie.** A base é vocabulário; a composiçêo de cada vídeo é autoral.
+- **Surpreender:** mirar premium cinematográfico / editorial ousado — fugir do feijêo com
+  arroz. Movimento com propósito; profundidade (fg/mid/bg); grêo+grade pra coesêo de filme.
+- O plano é **renderer-agnóstico** (intençêo, nêo comandos FFmpeg).
+- Render é **determinístico/time-driven** (HyperFrames): drive 0→1 por tempo, nêo scroll;
   SVG/CSS/GSAP primeiro, WebGL é fase 2.
 - Sempre `vpe validate` (zerar `[error]`) e mostrar `RESUMO.md` antes de renderizar.
 - Identidade PT-BR + dark premium âmbar; CTA INEMA.CLUB como última cena (desligável).

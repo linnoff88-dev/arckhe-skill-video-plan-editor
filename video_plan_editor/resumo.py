@@ -10,7 +10,7 @@ def render_resumo(plan: EditPlan) -> str:
     lines.append("")
     lines.append(f"- **Fonte:** {plan.source.kind.value} — {plan.source.ref}")
     lines.append(f"- **Objetivo:** {plan.intent.goal.value}")
-    lines.append(f"- **Por que essa ação:** {plan.intent.best_action_rationale}")
+    lines.append(f"- **Por que essa açêo:** {plan.intent.best_action_rationale}")
     lines.append(
         f"- **Preset:** {plan.style.preset.value} "
         f"(corte ~{plan.style.pacing.avg_cut_seconds}s, energia {plan.style.pacing.energy})"
@@ -29,7 +29,7 @@ def render_resumo(plan: EditPlan) -> str:
         if item.content and item.content.headline:
             lines.append(f"   - Headline: {item.content.headline}")
         if item.content and item.content.narration:
-            lines.append(f"   - Narração: {item.content.narration}")
+            lines.append(f"   - Narraçêo: {item.content.narration}")
         for cap in item.captions:
             lines.append(f"   - Legenda [{cap.t_in:.1f}-{cap.t_out:.1f}]: {cap.text}")
     return "\n".join(lines) + "\n"

@@ -27,7 +27,7 @@ Highlight de keyword (estilo legenda): fundo `--accent` ou `--green` atrás da p
 Escala tipográfica (9:16, ajustar p/ 16:9): hook 88–110px · título 48–72px · sub 28–36px ·
 legenda karaoke 44–56px · kicker 18–22px.
 
-## Fontes — instalação
+## Fontes — instalaçêo
 Já em `assets/fonts`: Sora, Inter, JetBrains Mono. **Faltam (buscar quando for renderizar):
 Anton** (obrigatória p/ editorial) e **Fraunces** (opcional premium). Subset latin .woff2
 local via `@font-face` — **nunca** Google Fonts CDN (some no render do HyperFrames).
@@ -39,5 +39,5 @@ local via `@font-face` — **nunca** Google Fonts CDN (some no render do HyperFr
 - 1–3 palavras por vez (ver `pacing.md`).
 
 ## Acabamento
-Grão + color grade global (ver `motion/textures.md`) em todos os vídeos para coesão de
-"filme". CTA final padrão INEMA.CLUB (âmbar com glow), desligável a pedido.
+Grêo + color grade global (ver `motion/textures.md`) em todos os vídeos para coesêo de
+"filme". CTA final padrêo INEMA.CLUB (âmbar com glow), desligável a pedido.

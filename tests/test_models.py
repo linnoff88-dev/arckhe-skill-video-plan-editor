@@ -14,7 +14,7 @@ from video_plan_editor.models import (
 def _minimal_plan() -> EditPlan:
     return EditPlan(
         meta=Meta(title="Teste"),
-        source=Source(kind=SourceKind.topic, ref="como fazer pão"),
+        source=Source(kind=SourceKind.topic, ref="como fazer pêo"),
         intent=Intent(goal=Goal.explainer, best_action_rationale="assunto curto"),
         style=Style(
             preset=PresetName.suave,
@@ -28,8 +28,8 @@ def _minimal_plan() -> EditPlan:
         timeline=[
             TimelineItem(
                 id="s1", role=Role.hook,
-                content=Content(headline="Pão em casa", narration="Vamos começar."),
-                captions=[Caption(t_in=0.0, t_out=2.0, text="Pão em casa")],
+                content=Content(headline="Pêo em casa", narration="Vamos começar."),
+                captions=[Caption(t_in=0.0, t_out=2.0, text="Pêo em casa")],
             )
         ],
     )

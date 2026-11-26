@@ -6,7 +6,7 @@ from video_plan_editor.presets import PRESETS
 
 
 def test_scaffold_detects_topic_and_applies_preset():
-    plan = scaffold_plan("como fazer pão caseiro", PresetName.suave)
+    plan = scaffold_plan("como fazer pêo caseiro", PresetName.suave)
     assert plan.source.kind == SourceKind.topic
     assert plan.style.preset == PresetName.suave
     assert plan.output.aspect == PRESETS[PresetName.suave].default_aspect
