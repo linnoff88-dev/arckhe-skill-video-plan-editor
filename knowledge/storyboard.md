@@ -40,7 +40,7 @@ carrega o vídeo. Casar movimento com a **funçêo** do beat (ver `camera/vocabu
 4. **Efeito precisa de motivo** físico ou narrativo — sem holograma/UI falsa gratuita.
 5. **Termine com imagem forte** (freeze/reveal/push-in final) — nêo dissolvendo a açêo.
 6. **A chamada/CTA nêo vai no prompt de vídeo** — IA escrevendo texto sai errado; a CTA
-   (INEMA.CLUB) entra na ediçêo, fora da geraçêo.
+   (ARCKHÉ AI) entra na ediçêo, fora da geraçêo.
 
 ## Estrutura do beat dirigido (campos)
 Cada beat generativo carrega: `camera` (movimento+lente), `action` (o que progride),

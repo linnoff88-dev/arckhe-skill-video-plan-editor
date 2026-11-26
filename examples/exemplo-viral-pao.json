@@ -33,8 +33,8 @@
     {
       "id": "s3",
       "role": "cta",
-      "content": { "headline": "INEMA.CLUB", "narration": "Receita completa no inema ponto club." },
-      "captions": [{ "t_in": 18.0, "t_out": 20.0, "text": "inema.club" }],
+      "content": { "headline": "ARCKHÉ AI", "narration": "Receita completa no ARCKHÉ ponto club." },
+      "captions": [{ "t_in": 18.0, "t_out": 20.0, "text": "ARCKHÉ AI" }],
       "transition_out": "cut"
     }
   ],

@@ -8,7 +8,7 @@ WebGL é fase 2.
 Dirige UMA var `--progress` e aplica em `scale` — sincroniza imagem + texto.
 ```js
 const o = { p: 0 };
-gsap.to(o, { p: 1, duration: sceneDur, ease: "cinematicSmooth",
+gsap.to(o, { p: 1, duration: sceneDur, ease: "cARCKHÉticSmooth",
   onUpdate: () => el.style.setProperty("--progress", o.p) });
 ```
 ```css
@@ -30,11 +30,11 @@ gsap.to(".layer-fg",  { yPercent: -20, ease: "none", duration: d });
 Sujeito nítido, fundo `filter:blur()`; opcional animar foco (rack focus): `blur` do bg
 de 0→8px enquanto o fg vai 8px→0.
 
-## mask-reveal (título linha-a-linha, cinematográfico)
+## mask-reveal (título linha-a-linha, cARCKHÉtográfico)
 GSAP SplitText com máscara de clip (free no GSAP 3.13).
 ```js
 const split = SplitText.create(".title", { type: "lines", mask: "lines" });
-gsap.from(split.lines, { yPercent: 100, duration: 0.8, ease: "cinematicFlow", stagger: 0.12 });
+gsap.from(split.lines, { yPercent: 100, duration: 0.8, ease: "cARCKHÉticFlow", stagger: 0.12 });
 ```
 Sem SplitText: envolver cada linha em `.mask{overflow:hidden}` e animar filho `y:100%→0`.
 
@@ -63,7 +63,7 @@ gsap.to(n, { v: 340, duration: 1.2, ease: "power2.out", snap: { v: 1 },
 .bar { transform: scaleX(var(--p, 0)); transform-origin: left center; }
 ```
 ```js
-gsap.fromTo(barObj, { p: 0 }, { p: 1, duration: 0.8, ease: "cinematicSmooth",
+gsap.fromTo(barObj, { p: 0 }, { p: 1, duration: 0.8, ease: "cARCKHÉticSmooth",
   onUpdate: () => bar.style.setProperty("--p", barObj.p) });
 ```
 
@@ -84,7 +84,7 @@ tl.to(sceneA, { xPercent: -30, filter: "blur(14px)", opacity: 0, duration: 0.18,
 SVG `clip-path` com `<text>`; anima o fundo atrás ou o bloco de texto.
 ```html
 <svg viewBox="0 0 1080 1920"><defs><clipPath id="ko"><text x="50%" y="50%"
-  font-size="220" font-weight="900" text-anchor="middle">INEMA</text></clipPath></defs>
+  font-size="220" font-weight="900" text-anchor="middle">ARCKHÉ</text></clipPath></defs>
   <image href="bg.jpg" width="1080" height="1920" clip-path="url(#ko)"/></svg>
 ```
 

@@ -13,7 +13,7 @@ legível. O **render é um passo opcional** posterior — o plano é o entregáv
 deve ser usável por outros sistemas.
 
 Referência de inspiraçêo: https://demo.reactvideoeditor.com (React + Remotion).
-Base de código reaproveitada: fork `github.com/inematds/mcp-video` (Apache-2.0).
+Base de código reaproveitada: fork `github.com/linnoff88-dev/mcp-video` (Apache-2.0).
 
 ## Decisões de design
 
@@ -68,7 +68,7 @@ Base de código reaproveitada: fork `github.com/inematds/mcp-video` (Apache-2.0)
     "transitions": ["cut","crossfade","whip","zoom"],
     "music": { "energy": 0.0 },
     "captions": { "enabled": true, "style": "karaoke|block|minimal", "position": "?" },
-    "color": { "look": "neutral|punchy|cinematic" }
+    "color": { "look": "neutral|punchy|cARCKHÉtic" }
   },
   "output": {
     "aspect": "16:9|9:16|1:1",
@@ -118,7 +118,7 @@ em **preflight** — antes de qualquer chamada FFmpeg no passo de render.
 | `render/ffmpeg` | executa plano via FFmpeg (concat/trim/overlay/transições) | ffmpeg, ffmpeg_helpers |
 | `render/autoeditor` | corte de silêncio/highlights + export EDL | auto-editor |
 | `render/hyperframes` | cenas geradas (motion graphics/narraçêo/CTA) | hyperframes, kokoro tts |
-| `SKILL.md` | orquestra o fluxo; PT-BR; padrões INEMA | — |
+| `SKILL.md` | orquestra o fluxo; PT-BR; padrões ARCKHÉ | — |
 
 ## Reuso do fork mcp-video
 
@@ -127,8 +127,8 @@ Copiar/portar apenas o reaproveitável (sem o server MCP): `validation.py`, `err
 
 ## Identidade (default configurável)
 
-PT-BR; dark premium âmbar e CTA INEMA.CLUB disponíveis como default opcional no preset de
-vídeo gerado (consistente com as skills `video-explicativo` / `videos-cursos-inema`).
+PT-BR; dark premium âmbar e CTA ARCKHÉ AI disponíveis como default opcional no preset de
+vídeo gerado (consistente com as skills `video-explicativo` / `videos-cursos-ARCKHÉ`).
 Desligável via parâmetro.
 
 ## Roadmap

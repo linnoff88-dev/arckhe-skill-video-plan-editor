@@ -14,7 +14,7 @@ Vídeo de 8s, comercial de açêo, cortes secos, câmera dinâmica.
 
 ## Marketing / venda (produto)
 ```
-Anúncio cinematográfico de produto, 15s, premium, ritmo médio-alto.
+Anúncio cARCKHÉtográfico de produto, 15s, premium, ritmo médio-alto.
 Produto sobre superfície escura, luz lateral dramática, reflexos sutis.
 [0-3s] pull-back revelando o produto, halo de luz, partículas suaves
 [3-8s] orbit lento mostrando detalhes, DOF raso, textura nítida
@@ -36,7 +36,7 @@ Vídeo institucional, 16:9, elegante, sóbrio, ritmo calmo-confiante.
 Ambiente clean, luz natural suave, paleta neutra com 1 accent.
 [0-4s] push-in lento no apresentador/elemento, profundidade com bokeh
 [4-10s] gráficos e números surgindo (count-up), transições por mask-reveal
-[10-15s] frase-síntese em tipografia elegante, fade cinematográfico, CTA discreto
+[10-15s] frase-síntese em tipografia elegante, fade cARCKHÉtográfico, CTA discreto
 ```
 
 ## Dica

@@ -7,7 +7,7 @@ Todo beat do `EditPlan` recebe um campo `camera` escolhido daqui.
 ## Movimentos básicos
 | Movimento | Efeito emocional | Uso | Frase p/ prompt | Motion graphics (GSAP/CSS) |
 |---|---|---|---|---|
-| **Push-in** (dolly in) | tensêo, aproximaçêo, intimidade | revelar detalhe, hook | "slow push in, 2s, ending close-up" | `scale`/`translateZ` crescendo, ease `cinematicSmooth` |
+| **Push-in** (dolly in) | tensêo, aproximaçêo, intimidade | revelar detalhe, hook | "slow push in, 2s, ending close-up" | `scale`/`translateZ` crescendo, ease `cARCKHÉticSmooth` |
 | **Pull-back** | revelaçêo, contexto | mostrar o todo | "slow pull back revealing the room" | `scale` 1→0.8 + reveal de camadas |
 | **Orbit** | poder, admiraçêo | apresentar produto/herói | "360° orbit around subject" | `rotateY` em `transform-style:preserve-3d` |
 | **Crane up** | grandiosidade, esperança | finais épicos | "crane up, arc rising" | `translateY` + `rotateX` leve |
@@ -21,7 +21,7 @@ Todo beat do `EditPlan` recebe um campo `camera` escolhido daqui.
 ## Combinações avançadas
 - **Compression zoom (dolly zoom / Hitchcock):** afasta a câmera enquanto a lente faz zoom — sujeito mantém tamanho, fundo distorce. Prompt: "dolly zoom, vertigo effect". MG: sujeito `scale` constante + fundo `scale`/`perspective` em sentido oposto.
 - **Accelerating orbit:** órbita lenta→rápida, fundo borra, sujeito nítido. MG: `rotateY` com ease `power3.in` + `filter:blur` no fundo.
-- **Floating descent:** descida lentíssima, onírica, sem tremor. MG: `translateY` longo com `cinematicSilk`, sem idle shake.
+- **Floating descent:** descida lentíssima, onírica, sem tremor. MG: `translateY` longo com `cARCKHÉticSilk`, sem idle shake.
 
 ## Profundidade (sempre que possível)
 Compor em **3 planos**: foreground / midground / background, com **DOF raso** (sujeito

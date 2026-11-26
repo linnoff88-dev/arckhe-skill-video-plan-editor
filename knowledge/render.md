@@ -15,7 +15,7 @@ API, sem Sora. O pipeline HyperFrames completo é coberto pela skill `video-expl
    existentes. **Medir durações com `ffprobe`** e preencher o array `AUDIO[]` — *timing é
    fonte única* (data-start/duration E tweens saem do mesmo array → áudio e animaçêo batidos).
 3. **B-roll** (beats `render_kind: generated_still`) — gerar imagens com **flux2-klein** no
-   playground **inemaimg** (`http://localhost:8000`), dirigido por `agent-browser`:
+   playground **ARCKHÉimg** (`http://localhost:8000`), dirigido por `agent-browser`:
    - setar aspecto (16:9 = 1536×1024, ou 9:16) e o prompt (de `prompting/clip-direction.md`,
      descrevendo uma IMAGEM, sem verbos de movimento), clicar **Gerar** (~2.5min);
    - extrair: `agent-browser eval "...últimas imagens...src"` `--json` → o data URL vem em

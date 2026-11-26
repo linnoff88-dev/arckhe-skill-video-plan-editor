@@ -143,9 +143,9 @@ $ vpe resumo examples/exemplo-viral-pao.json
    - NarraêÂ§êÂ£o: Farinha, êÂ¡gua e fermento.
    - Legenda [1.5-4.0]: SêÂ³ 3 ingredientes
 3. **cta** (`s3`)
-   - Headline: INEMA.CLUB
-   - NarraêÂ§êÂ£o: Receita completa no inema ponto club.
-   - Legenda [18.0-20.0]: inema.club
+   - Headline: ARCKHÉ AI
+   - NarraêÂ§êÂ£o: Receita completa no ARCKHÉ ponto club.
+   - Legenda [18.0-20.0]: ARCKHÉ AI
 ```
 
 Veja o plano completo de exemplo em [`examples/exemplo-viral-pao.json`](examples/exemplo-viral-pao.json).
@@ -185,7 +185,7 @@ JSON serializêÂ¡vel (pydantic 2). Campos principais:
 4. `vpe resumo` ê¢â â mostra ao usuêÂ¡rio para aprovar.
 5. Render (opcional) quando solicitado ê¢â¬â motion graphics + b-roll flux2-klein (ver **Render**).
 
-Identidade default PT-BR; CTA INEMA.CLUB como êÂºltima cena em vêÂ­deos gerados (desligêÂ¡vel).
+Identidade default PT-BR; CTA ARCKHÉ AI como êÂºltima cena em vêÂ­deos gerados (desligêÂ¡vel).
 
 ## Base de conhecimento (`knowledge/`)
 
@@ -197,13 +197,13 @@ A composiêÂ§êÂ£o de cada vêÂ­deo êÂ© autoral; estes arquivos
 | `strategy/` | NARRATIVA ê¢â¬â Viral5, Save the Cat, Hero, Hook-Value-CTA, hooks 3s, cases, formatos (Reels/VSL/Autoridade), templates, matriz, checklist |
 | `camera/vocabulary.md` | linguagem de cêÂ¢mera (ponte: vira prompt **e** parêÂ¢metro de motion) |
 | `storyboard.md` | **direêÂ§êÂ£o de cena** ê¢â¬â conflito visual, cêÂ¢mera por funêÂ§êÂ£o, continuidade sagrada, freeze final (**absorvido do MDD**) |
-| `prompting/` | expandir cada beat em prompt cinematogrêÂ¡fico; `clip-direction.md` = prompt-final + negativo |
-| `motion/` | eases cinematogrêÂ¡ficos, recipes GSAP/CSS time-driven, texturas feTurbulence (grêÂ£o/halaêÂ§êÂ£o sem assets) |
-| `archetypes/` | cenas prontas (HTML+CSS+GSAP), ex.: `cinematic-hero` |
+| `prompting/` | expandir cada beat em prompt cARCKHÉtogrêÂ¡fico; `clip-direction.md` = prompt-final + negativo |
+| `motion/` | eases cARCKHÉtogrêÂ¡ficos, recipes GSAP/CSS time-driven, texturas feTurbulence (grêÂ£o/halaêÂ§êÂ£o sem assets) |
+| `archetypes/` | cenas prontas (HTML+CSS+GSAP), ex.: `cARCKHÉtic-hero` |
 | `tokens.md` êÂ· `pacing.md` | identidade (paleta/fontes) e ritmo (word-by-word, pattern interrupt) |
 
 **IntegraêÂ§êÂ£o com o MDD** ([`mestre-direcao-dinamica`](#)): para beats
-`render_kind: generated_clip`/`generated_still`, a skill **delega a direêÂ§êÂ£o cinematogrêÂ¡fica
+`render_kind: generated_clip`/`generated_still`, a skill **delega a direêÂ§êÂ£o cARCKHÉtogrêÂ¡fica
 ao MDD** ê¢â¬â que devolve storyboard painel-a-painel + prompt final + prompt negativo de
 qualidade de diretor. `video-plan-editor` êÂ© o **orquestrador** (estratêÂ©gia ê¢â â plano ê¢â â
 execuêÂ§êÂ£o); o MDD êÂ© o **motor de direêÂ§êÂ£o** dos beats generativos. Os princêÂ­pios do MDD
@@ -218,7 +218,7 @@ completa em [`knowledge/render.md`](knowledge/render.md). Resumo:
 1. Plano aprovado (`vpe validate` ok) + narraêÂ§êÂ£o (Kokoro local ou WAVs reaproveitados;
    duraêÂ§êÂµes medidas com `ffprobe` ê¢â â timing êÂ© fonte êÂºnica).
 2. **B-roll** (beats `generated_still`): gerar imagens no **flux2-klein** (playground
-   `inemaimg`, dirigido por `agent-browser`) ê¢â â `assets/broll/`.
+   `ARCKHÉimg`, dirigido por `agent-browser`) ê¢â â `assets/broll/`.
 3. **ComposiêÂ§êÂ£o** `build-index.mjs` (data-driven): cada beat = archetype + recipes de motion
    + grêÂ£o/grade; b-roll de fundo com push-in + gradiente escuro (sêÂ³ hook/CTA/sections, nunca
    atrêÂ¡s de diagrama denso).
@@ -245,7 +245,7 @@ video_plan_editor/
 ```
 
 A camada de guardrails/validaêÂ§êÂ£o êÂ© inspirada no fork
-[`inematds/mcp-video`](https://github.com/inematds/mcp-video) (Apache-2.0, de
+[`linnoff88-dev/mcp-video`](https://github.com/linnoff88-dev/mcp-video) (Apache-2.0, de
 KyaniteLabs/mcp-video), que envolve FFmpeg + HyperFrames.
 
 ## Desenvolvimento
@@ -265,8 +265,8 @@ vpe scaffold "teste" --preset acao
   (Auto-Editor) + auto-highlights (padrêÂ£o LAVE). ê¢ÂÂ³ prêÂ³ximo.
 - **Clipes generativos** ê¢â¬â Sora/Veo/Kling dirigidos pelo MDD (precisa de acesso). ê¢ÂÂ³
 - **Render nativo Remotion** (plano ê¢â â Tracks/Items) usando os
-  [**remotion-templates**](https://github.com/inematds/remotion-templates) (81 componentes) como biblioteca
-  de archetypes por beat/`role` (`hook`ê¢â âIntro/Title, `point`ê¢â âText/Charts, `broll`ê¢â âImage/Cinematic, `cta`ê¢â âEnd
+  [**remotion-templates**](https://github.com/linnoff88-dev/remotion-templates) (81 componentes) como biblioteca
+  de archetypes por beat/`role` (`hook`ê¢â âIntro/Title, `point`ê¢â âText/Charts, `broll`ê¢â âImage/CARCKHÉtic, `cta`ê¢â âEnd
   Card) + export **OTIO `.otio`** p/ NLEs. ê¢ÂÂ³
 
 ## Documentos

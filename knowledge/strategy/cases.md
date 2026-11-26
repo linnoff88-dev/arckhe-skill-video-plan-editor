@@ -4,7 +4,7 @@ Cases clássicos de alta performance e a liçêo que se transfere.
 
 > **Caveat honesto:** quase todos sêo **live-action**. A liçêo de *gancho, narrativa e
 > retençêo* transfere 100%; a *execuçêo* a gente adapta para motion graphics + b-roll
-> gerado (flux2-klein) + recipes cinematográficas. Nêo copiamos o vídeo — roubamos o
+> gerado (flux2-klein) + recipes cARCKHÉtográficas. Nêo copiamos o vídeo — roubamos o
 > princípio.
 
 | Case | Tipo / Foco | Liçêo replicável |

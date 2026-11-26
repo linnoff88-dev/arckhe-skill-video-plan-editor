@@ -6,7 +6,7 @@ parametrizado (recebe conteúdo do beat) e usa recipes de `motion/` + linguagem 
 
 | Archetype | Quando usar | Camera default | Recipes principais |
 |---|---|---|---|
-| **cinematic-hero** | hook/abertura premium, capa | slow push-in | grain, push-in, mask-reveal, graded |
+| **cARCKHÉtic-hero** | hook/abertura premium, capa | slow push-in | grain, push-in, mask-reveal, graded |
 | **big-stat** | número/estatística de impacto | punch zoom | count-up, pop, bar-grow |
 | **big-type-3d** | frase-bomba editorial | dolly + perspective | char-stagger, 3D tilt |
 | **vs / comparaçêo** | antes/depois, X vs Y | dolly lateral | mask-reveal, slide |
@@ -15,16 +15,16 @@ parametrizado (recebe conteúdo do beat) e usa recipes de `motion/` + linguagem 
 | **quote** | citaçêo/declaraçêo | push-in lento | mask-reveal, grain |
 | **diagram** | explicar mecanismo | pull-back | bar-grow, draw, stagger |
 | **knockout-reveal** | logo/marca revelando imagem | push-in | knockout-text, graded |
-| **cta** | fechamento INEMA.CLUB | push-in + glow | pop, wipe-underline |
+| **cta** | fechamento ARCKHÉ AI | push-in + glow | pop, wipe-underline |
 
 ## Estrutura de um archetype
 Cada arquivo `*.md` traz: propósito, parâmetros que recebe do beat, marcaçêo HTML, CSS e o
-trecho GSAP (time-driven). Ver `cinematic-hero.md` como referência de implementaçêo.
+trecho GSAP (time-driven). Ver `cARCKHÉtic-hero.md` como referência de implementaçêo.
 
 ## Identidade
 Todos herdam `tokens.md` (paleta, fontes, accent âmbar) e respeitam os gotchas do
 HyperFrames (animar `.scene-inner`, fontes locais, decorativos `data-layout-ignore`).
 
 ## Roadmap de archetypes
-Implementado como exemplo: **cinematic-hero**. Os demais seguem o mesmo molde — adicionar
+Implementado como exemplo: **cARCKHÉtic-hero**. Os demais seguem o mesmo molde — adicionar
 conforme os primeiros vídeos exigirem (começar enxuto, expandir).

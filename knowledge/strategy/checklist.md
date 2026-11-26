@@ -25,4 +25,4 @@ Rodar antes de finalizar o plano (e antes de publicar o vídeo).
 ## Antes de publicar
 - [ ] Frames conferidos pelo usuário (nêo há áudio audível no ambiente — validar locuçêo).
 - [ ] Aspect correto para a plataforma (9:16 Reels/TikTok, 16:9 YouTube).
-- [ ] CTA final presente (INEMA.CLUB quando aplicável).
+- [ ] CTA final presente (ARCKHÉ AI quando aplicável).

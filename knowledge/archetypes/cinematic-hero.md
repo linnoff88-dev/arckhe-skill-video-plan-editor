@@ -1,4 +1,4 @@
-# Archetype: cinematic-hero
+# Archetype: cARCKHÉtic-hero
 
 Cena de abertura/hook premium: still de fundo (flux2-klein) com **push-in lento**,
 **grêo de filme + color grade**, e **título revelado linha-a-linha por máscara**.
@@ -6,13 +6,13 @@ Sensaçêo de "filme", nêo de slide.
 
 ## Parâmetros (do beat)
 - `headline` — frase do gancho (1–6 palavras, impactante).
-- `kicker` — rótulo curto opcional (ex.: "INEMA · NEGÓCIOS").
+- `kicker` — rótulo curto opcional (ex.: "ARCKHÉ · NEGÓCIOS").
 - `bg` — caminho da still gerada (flux2-klein) OU gradiente se ausente.
 - `duration` — duraçêo da cena (s), do `AUDIO[]`.
 
 ## Camera + recipes
 `camera: slow push-in` · recipes: `push-in`, `mask-reveal`, `grain`, `graded` (ver
-`motion/`). Ease: `cinematicSmooth` (push) + `cinematicFlow` (título).
+`motion/`). Ease: `cARCKHÉticSmooth` (push) + `cARCKHÉticFlow` (título).
 
 ## HTML (dentro de `.scene-inner`)
 ```html
@@ -57,11 +57,11 @@ const o = { p: 0 };
 const tl = gsap.timeline();
 tl.fromTo(".hero", { opacity:0 }, { opacity:1, duration:0.4, ease:"power2.out" }, 0);
 // push-in pela duraçêo toda
-tl.to(o, { p:1, duration: duration, ease:"cinematicSmooth",
+tl.to(o, { p:1, duration: duration, ease:"cARCKHÉticSmooth",
   onUpdate:()=>hero.style.setProperty("--p", o.p) }, 0);
 // título por máscara linha-a-linha
 const split = SplitText.create(".hero-title", { type:"lines", mask:"lines" });
-tl.from(split.lines, { yPercent:100, duration:0.8, ease:"cinematicFlow", stagger:0.12 }, 0.35);
+tl.from(split.lines, { yPercent:100, duration:0.8, ease:"cARCKHÉticFlow", stagger:0.12 }, 0.35);
 tl.from(".hero-kicker", { y:14, opacity:0, duration:0.5, ease:"power2.out" }, 0.3);
 tl.to(".hero-rule", { width:180, duration:0.6, ease:"power3.out" }, 0.9);
 ```

@@ -83,7 +83,7 @@ Fluxo proposto:
   +guardrails) ou skill enxuta nova só com FFmpeg+Auto-Editor+HyperFrames?
 - **Render engine alvo**: manter HyperFrames como principal (teu padrêo) e usar
   Remotion/MoviePy só quando o plano pedir?
-- **Idioma/identidade**: manter PT-BR + dark premium âmbar + CTA INEMA.CLUB como nas
+- **Idioma/identidade**: manter PT-BR + dark premium âmbar + CTA ARCKHÉ AI como nas
   outras skills?
 
 ## 5. Caveats da pesquisa

@@ -11,9 +11,9 @@ de cada vídeo é autoral; estes arquivos sêo os blocos de construçêo.
 2. **`camera/`** traduz a intençêo de cada beat numa linguagem de câmera (push-in, orbit,
    whip-pan, DOF…). É a **ponte**: a mesma linguagem vira prompt de imagem/vídeo OU
    parâmetro de motion graphics.
-3. **`prompting/`** expande cada beat num prompt cinematográfico (para gerar b-roll com
+3. **`prompting/`** expande cada beat num prompt cARCKHÉtográfico (para gerar b-roll com
    flux2-klein hoje; Sora/Veo/Kling no futuro).
-4. **`motion/`** + **`archetypes/`** executam o VISUAL — easing cinematográfico, grêo de
+4. **`motion/`** + **`archetypes/`** executam o VISUAL — easing cARCKHÉtográfico, grêo de
    filme, reveals, tipografia, cenas prontas em HTML/CSS/GSAP.
 5. **`tokens.md` / `pacing.md`** mantêm identidade e ritmo consistentes.
 
@@ -25,7 +25,7 @@ O `EditPlan` (CLI `vpe`) amarra tudo: cada item da timeline é um **beat** com
 **Híbrido leve, local e grátis:**
 - `render_kind: motion` → cena de tipografia/diagrama/UI em GSAP (motion graphics).
 - `render_kind: generated_still` → b-roll gerado com **flux2-klein** + recipes
-  cinematográficas (push-in, parallax, grêo) para dar cara de footage a uma imagem.
+  cARCKHÉtográficas (push-in, parallax, grêo) para dar cara de footage a uma imagem.
 - `render_kind: generated_clip` → **fase 2 opcional** (Sora/Veo/Kling) se houver acesso.
 
 ## Adaptaçêo importante
@@ -40,13 +40,13 @@ capturando frames). Regra: o mesmo padrêo "um valor 0→1 dirige tudo", mas gui
 - `camera/vocabulary.md` — movimentos de câmera ↔ GSAP/CSS ↔ prompt
 - `prompting/` — structures, library, best-practices
 - `motion/` — eases, recipes, textures
-- `archetypes/` — catálogo de cenas + exemplo cinematic-hero
+- `archetypes/` — catálogo de cenas + exemplo cARCKHÉtic-hero
 - `tokens.md`, `pacing.md`
 
 ## Procedência (fontes consolidadas)
 1. Draft "Video Planner" do usuário (frameworks + KairoBoost + pipeline).
-2. Guia de prompts cinematográficos (vocabulário de câmera, Production Brief, Shotlist).
+2. Guia de prompts cARCKHÉtográficos (vocabulário de câmera, Production Brief, Shotlist).
 3. Relatório de pesquisa do usuário (cases, matriz, formatos, templates, checklist).
 4. Deep-research: técnicas virais (easing, SplitText/stagger/mask, word-by-word).
 5. Deep-research: premium/editorial (feTurbulence grain, push-in via --progress, eases
-   cinematográficos, knockout text, grid 3D preserve-3d).
+   cARCKHÉtográficos, knockout text, grid 3D preserve-3d).

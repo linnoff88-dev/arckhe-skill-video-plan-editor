@@ -139,7 +139,7 @@ def _minimal_plan() -> EditPlan:
             transitions=[Transition.crossfade],
             music=Music(energy=0.3),
             captions=Captions(style=CaptionStyle.minimal),
-            color=Color(look=ColorLook.cinematic),
+            color=Color(look=ColorLook.cARCKHÉtic),
         ),
         output=Output(aspect=Aspect.landscape, duration_target_seconds=30.0),
         timeline=[
@@ -236,7 +236,7 @@ class CaptionStyle(str, Enum):
 class ColorLook(str, Enum):
     neutral = "neutral"
     punchy = "punchy"
-    cinematic = "cinematic"
+    cARCKHÉtic = "cARCKHÉtic"
 
 
 class Aspect(str, Enum):
@@ -461,7 +461,7 @@ PRESETS: dict[PresetName, PresetProfile] = {
         avg_cut_seconds=5.0, energy=0.3,
         transitions=(Transition.crossfade,),
         music_energy=0.35, caption_style=CaptionStyle.minimal,
-        color_look=ColorLook.cinematic, default_aspect=Aspect.landscape,
+        color_look=ColorLook.cARCKHÉtic, default_aspect=Aspect.landscape,
     ),
     PresetName.promo: PresetProfile(
         avg_cut_seconds=2.5, energy=0.7,
@@ -628,7 +628,7 @@ def _plan(timeline) -> EditPlan:
             transitions=[Transition.crossfade],
             music=Music(energy=0.3),
             captions=Captions(style=CaptionStyle.minimal),
-            color=Color(look=ColorLook.cinematic),
+            color=Color(look=ColorLook.cARCKHÉtic),
         ),
         output=Output(aspect=Aspect.landscape, duration_target_seconds=30.0),
         timeline=timeline,
@@ -1215,8 +1215,8 @@ renderer-agnóstico) + resumo legível. O plano é o entregável; o render é op
   nêo comandos FFmpeg.
 - Sempre rode `vpe validate` e zere os `[error]` antes de apresentar.
 - Sempre mostre o `RESUMO.md` e peça aprovaçêo antes de qualquer render futuro.
-- Identidade default PT-BR; CTA INEMA.CLUB como última cena quando for vídeo gerado
-  (consistente com as skills video-explicativo / videos-cursos-inema), desligável a pedido.
+- Identidade default PT-BR; CTA ARCKHÉ AI como última cena quando for vídeo gerado
+  (consistente com as skills video-explicativo / videos-cursos-ARCKHÉ), desligável a pedido.
 ````
 
 - [ ] **Step 2: Commit**
@@ -1238,7 +1238,7 @@ git commit -m "docs: SKILL.md (orquestraçêo detect->plano->validate->resumo)"
 - Validaçêo/guardrails preflight → Task 4 ✓
 - Resumo legível → Task 5 ✓
 - CLI (gera plano + resumo) → Task 7 ✓
-- Identidade PT-BR/INEMA → SKILL.md (Task 8) ✓
+- Identidade PT-BR/ARCKHÉ → SKILL.md (Task 8) ✓
 - **Fora desta fase (declarado):** ingest de vídeo real (Fase 2), render FFmpeg/HyperFrames (Fase 3), Remotion/OTIO (v2/v3). Coberto pela seçêo Escopo. ✓
 
 **Placeholder scan:** sem TBD/TODO; todo passo de código tem código completo. ✓

@@ -1,6 +1,6 @@
 ---
 name: video-plan-editor
-description: Cria um plano profissional de vídeo de ALTA PERFORMANCE a partir de um assunto ou link, usando uma base de conhecimento (estratégia viral + linguagem de câmera + prompting cinematográfico + motion graphics premium). Detecta o input, define a estratégia, escolhe preset e emite plano-edicao.json + RESUMO.md. Render opcional via motion graphics (HyperFrames) + b-roll flux2-klein. Use quando o usuário der um assunto/link e pedir "plano de vídeo", "plano de ediçêo", "editar vídeo", "clipe", "corte para Reels/TikTok", "vídeo promocional/de vendas/viral", ou um vídeo de alta performance.
+description: Cria um plano profissional de vídeo de ALTA PERFORMANCE a partir de um assunto ou link, usando uma base de conhecimento (estratégia viral + linguagem de câmera + prompting cARCKHÉtográfico + motion graphics premium). Detecta o input, define a estratégia, escolhe preset e emite plano-edicao.json + RESUMO.md. Render opcional via motion graphics (HyperFrames) + b-roll flux2-klein. Use quando o usuário der um assunto/link e pedir "plano de vídeo", "plano de ediçêo", "editar vídeo", "clipe", "corte para Reels/TikTok", "vídeo promocional/de vendas/viral", ou um vídeo de alta performance.
 ---
 
 # video-plan-editor
@@ -23,14 +23,14 @@ opcional (motion graphics + b-roll flux2-klein).
 2. `knowledge/camera/vocabulary.md` — linguagem de câmera (ponte: vira prompt E motion).
 3. `knowledge/storyboard.md` — direçêo de cena (conflito visual, câmera por funçêo,
    continuidade sagrada, freeze final) — absorvido do MDD; aplica a beats generativos.
-4. `knowledge/prompting/` — expandir cada beat em prompt cinematográfico; `clip-direction.md`
+4. `knowledge/prompting/` — expandir cada beat em prompt cARCKHÉtográfico; `clip-direction.md`
    traz prompt-final + negativo (b-roll flux2-klein hoje; Sora/Veo/Kling depois).
 5. `knowledge/motion/` — `eases.md`, `recipes.md` (GSAP/CSS time-driven), `textures.md`
    (grêo/halaçêo feTurbulence).
-6. `knowledge/archetypes/` — cenas prontas (ex.: `cinematic-hero.md`).
+6. `knowledge/archetypes/` — cenas prontas (ex.: `cARCKHÉtic-hero.md`).
 7. `knowledge/tokens.md` + `pacing.md` — identidade e ritmo.
 8. `knowledge/render.md` — **execuçêo real**: como o plano vira MP4 (HyperFrames + b-roll
-   flux2-klein via inemaimg), com a receita e os gotchas.
+   flux2-klein via ARCKHÉimg), com a receita e os gotchas.
 
 Para beats `generated_clip`/`generated_still`, **delegue a direçêo à skill
 `mestre-direcao-dinamica` (MDD)** — ela devolve storyboard painel-a-painel + prompt final +
@@ -64,7 +64,7 @@ escolhe quais beats sêo `motion` (GSAP) vs generativos; o MDD dirige os generat
 
 6. **Render (opcional, híbrido)** — quando pedido, siga `knowledge/render.md` (receita +
    gotchas). Em resumo:
-   - b-roll `generated_still` → gerar com **flux2-klein** (playground `inemaimg`
+   - b-roll `generated_still` → gerar com **flux2-klein** (playground `ARCKHÉimg`
      `http://localhost:8000` via `agent-browser`) a partir do `gen_prompt`;
    - montar a composiçêo HTML/CSS/GSAP usando `archetypes/` + `motion/recipes.md` +
      `textures.md` (grêo/grade) + `tokens.md`; renderizar via HyperFrames (skill
@@ -82,10 +82,10 @@ escolhe quais beats sêo `motion` (GSAP) vs generativos; o MDD dirige os generat
 
 ## Regras de ouro
 - **Crie, nêo copie.** A base é vocabulário; a composiçêo de cada vídeo é autoral.
-- **Surpreender:** mirar premium cinematográfico / editorial ousado — fugir do feijêo com
+- **Surpreender:** mirar premium cARCKHÉtográfico / editorial ousado — fugir do feijêo com
   arroz. Movimento com propósito; profundidade (fg/mid/bg); grêo+grade pra coesêo de filme.
 - O plano é **renderer-agnóstico** (intençêo, nêo comandos FFmpeg).
 - Render é **determinístico/time-driven** (HyperFrames): drive 0→1 por tempo, nêo scroll;
   SVG/CSS/GSAP primeiro, WebGL é fase 2.
 - Sempre `vpe validate` (zerar `[error]`) e mostrar `RESUMO.md` antes de renderizar.
-- Identidade PT-BR + dark premium âmbar; CTA INEMA.CLUB como última cena (desligável).
+- Identidade PT-BR + dark premium âmbar; CTA ARCKHÉ AI como última cena (desligável).

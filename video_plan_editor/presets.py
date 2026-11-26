@@ -31,7 +31,7 @@ PRESETS: dict[PresetName, PresetProfile] = {
         avg_cut_seconds=5.0, energy=0.3,
         transitions=(Transition.crossfade,),
         music_energy=0.35, caption_style=CaptionStyle.minimal,
-        color_look=ColorLook.cinematic, default_aspect=Aspect.landscape,
+        color_look=ColorLook.cARCKHÉtic, default_aspect=Aspect.landscape,
     ),
     PresetName.promo: PresetProfile(
         avg_cut_seconds=2.5, energy=0.7,

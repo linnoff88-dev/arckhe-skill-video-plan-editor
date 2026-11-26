@@ -1,4 +1,4 @@
-# Motion — Texturas cinematográficas (SVG, sem assets)
+# Motion — Texturas cARCKHÉtográficas (SVG, sem assets)
 
 Grêo de filme, halaçêo, color-grade e warp **sintetizados no browser** com SVG
 `feTurbulence` (Perlin noise). Zero imagens. Determinístico no render. Fonte: W3C/MDN +

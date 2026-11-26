@@ -22,7 +22,7 @@ def _minimal_plan() -> EditPlan:
             transitions=[Transition.crossfade],
             music=Music(energy=0.3),
             captions=Captions(style=CaptionStyle.minimal),
-            color=Color(look=ColorLook.cinematic),
+            color=Color(look=ColorLook.cARCKHÉtic),
         ),
         output=Output(aspect=Aspect.landscape, duration_target_seconds=30.0),
         timeline=[

@@ -12,13 +12,13 @@ entradas de UI/texto** (rápido no início = responsivo; desacelera no fim = atr
 - **bounce** = quica. Lúdico.
 - **expo.out** = entrada muito rápida que freia forte (premium/snappy).
 
-## Eases cinematográficos (CustomEase) — registrar uma vez
+## Eases cARCKHÉtográficos (CustomEase) — registrar uma vez
 ```js
 gsap.registerPlugin(CustomEase);
-CustomEase.create("cinematicSilk",   "0.45,0.05,0.55,0.95"); // suave, equilibrado
-CustomEase.create("cinematicSmooth", "0.25,0.1,0.25,1");     // entrada/saída clássica
-CustomEase.create("cinematicFlow",   "0.33,0,0.2,1");        // flui, desacelera elegante
-CustomEase.create("cinematicLinear", "0.4,0,0.6,1");         // quase linear, controlado
+CustomEase.create("cARCKHÉticSilk",   "0.45,0.05,0.55,0.95"); // suave, equilibrado
+CustomEase.create("cARCKHÉticSmooth", "0.25,0.1,0.25,1");     // entrada/saída clássica
+CustomEase.create("cARCKHÉticFlow",   "0.33,0,0.2,1");        // flui, desacelera elegante
+CustomEase.create("cARCKHÉticLinear", "0.4,0,0.6,1");         // quase linear, controlado
 ```
 Pequenas variações de aceleraçêo mudam dramaticamente o ritmo visual. Use estes para
 push-in lento, parallax e reveals premium.
@@ -28,14 +28,14 @@ push-in lento, parallax e reveals premium.
 |---|---|
 | Entrada de texto/UI | `power2.out` |
 | Pop de número/ícone (punch) | `back.out(2)` |
-| Push-in / câmera lenta | `cinematicSmooth` / `power1.inOut` |
-| Parallax / drift | `cinematicSilk` / `sine.inOut` |
+| Push-in / câmera lenta | `cARCKHÉticSmooth` / `power1.inOut` |
+| Parallax / drift | `cARCKHÉticSilk` / `sine.inOut` |
 | Whip-pan / impacto | `expo.in` (saída) + `expo.out` (entrada) |
 | Energia/viral | `back.out(2.5)` ou `elastic.out` |
-| Saída/fade cinematográfico | `power2.in` |
+| Saída/fade cARCKHÉtográfico | `power2.in` |
 
 ## Tempo (time-driven, nêo scroll)
 Nosso render é por tempo. Onde a pesquisa usa `ScrollTrigger.onUpdate`, nós dirigimos o
 mesmo valor 0→1 pela **timeline GSAP** no tempo do beat. Padrêo: uma var `--progress`
-movida por `gsap.to(obj,{p:1, ease:"cinematicSmooth"})` e aplicada a `scale/translate`
+movida por `gsap.to(obj,{p:1, ease:"cARCKHÉticSmooth"})` e aplicada a `scale/translate`
 (ver `recipes.md`).

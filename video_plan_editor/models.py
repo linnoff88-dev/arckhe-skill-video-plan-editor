@@ -45,7 +45,7 @@ class CaptionStyle(str, Enum):
 class ColorLook(str, Enum):
     neutral = "neutral"
     punchy = "punchy"
-    cinematic = "cinematic"
+    cARCKHÉtic = "cARCKHÉtic"
 
 
 class Aspect(str, Enum):

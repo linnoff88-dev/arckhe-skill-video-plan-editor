@@ -1,17 +1,17 @@
 # Prompting — Estruturas de prompt (=KairoBoost)
 
-Expandir um beat curto num prompt cinematográfico rico. Serve para **flux2-klein**
+Expandir um beat curto num prompt cARCKHÉtográfico rico. Serve para **flux2-klein**
 (b-roll/still hoje) e para modelos de vídeo (Sora/Veo/Kling) na fase 2.
 
 Princípio (KairoBoost): de "pessoa correndo" → "pessoa em roupas de corrida profissional,
 correndo num parque ao amanhecer com luz dourada, movimento dinâmico, câmera lateral,
 expressêo de determinaçêo, fundo desfocado, atmosfera motivacional, qualidade
-cinematográfica 4K".
+cARCKHÉtográfica 4K".
 
 ## Método 1 — Production Brief (cenas atmosféricas)
 Para uma imagem/cena rica e emocionalmente ressonante.
 ```
-[FORMATO E TOM]     gênero + tom. Ex: "anúncio cinematográfico de luxo, nostálgico, íntimo"
+[FORMATO E TOM]     gênero + tom. Ex: "anúncio cARCKHÉtográfico de luxo, nostálgico, íntimo"
 [SUJEITO]           personagens/elementos. Ex: "mulher 30s, expressêo contemplativa"
 [VESTUÁRIO/PROPS]   roupas e objetos. Ex: "suéter bege, relógio de ouro, café fumegante"
 [ENQUADRAMENTO]     plano + ângulo. Ex: "close médio, câmera acima da linha dos olhos, 3/4"

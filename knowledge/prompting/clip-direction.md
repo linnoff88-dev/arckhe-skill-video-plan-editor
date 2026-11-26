@@ -12,13 +12,13 @@ beats do storyboard. Regras:
 - Mantenha personagens, objetos e ambiente **consistentes**; **termine no estado final** (freeze/reveal).
 - Nêo invente novos elementos.
 
-Esqueleto (preencher): `[tom/estilo cinematográfico + lentes + grade de cor] → [estado
+Esqueleto (preencher): `[tom/estilo cARCKHÉtográfico + lentes + grade de cor] → [estado
 inicial] → [beats com câmera+açêo+continuidade] → [virada] → [estado final/freeze]. Same
 character, same wardrobe, same light direction and color grade in every shot; natural
 interpolated movement; no on-screen text, no logos, no extra speaking characters.`
 
 Exemplo (autoridade/negócios, 16:9) — ver o pacote real em `examples/` quando existir:
-> Cinematic premium short film, 35–85mm, shallow DoF, film grain, warm halation,
+> CARCKHÉtic premium short film, 35–85mm, shallow DoF, film grain, warm halation,
 > navy-amber-teal grade. Slow push-in on a man in a dark suit hunched over a glowing
 > laptop in a cramped dark office (cold light)… [beats]… ending on a slow push-in onto his
 > upright silhouette watching the city skyline at dawn, freeze. Same actor/wardrobe/left
@@ -33,7 +33,7 @@ Exemplo (autoridade/negócios, 16:9) — ver o pacote real em `examples/` quando
 ## Para flux2-klein (still)
 Descreva uma IMAGEM (sem verbos de movimento): composiçêo, luz, DOF, acabamento (grêo/LUT).
 O movimento (push-in/parallax) é aplicado depois pelas recipes de `motion/` sobre a still.
-Mantenha o mesmo prompt negativo. Aspecto 16:9 (1536×1024) ou 9:16 no playground inemaimg.
+Mantenha o mesmo prompt negativo. Aspecto 16:9 (1536×1024) ou 9:16 no playground ARCKHÉimg.
 
 ## Onde isso entra no EditPlan
 `timeline[i].gen_prompt` = prompt final do beat; a continuidade vai anotada; o negativo é

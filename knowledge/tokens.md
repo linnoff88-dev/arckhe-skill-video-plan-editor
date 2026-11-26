@@ -2,7 +2,7 @@
 
 Constrangimentos que mantêm consistência e "marca" (1–2 fontes, 2–3 pesos, paleta fixa).
 
-## Paleta (dark premium âmbar — house style INEMA)
+## Paleta (dark premium âmbar — house style ARCKHÉ)
 ```css
 :root{
   --bg:#0D1321; --bg2:#1D2D44; --bg3:#3E5C76;
@@ -40,4 +40,4 @@ local via `@font-face` — **nunca** Google Fonts CDN (some no render do HyperFr
 
 ## Acabamento
 Grêo + color grade global (ver `motion/textures.md`) em todos os vídeos para coesêo de
-"filme". CTA final padrêo INEMA.CLUB (âmbar com glow), desligável a pedido.
+"filme". CTA final padrêo ARCKHÉ AI (âmbar com glow), desligável a pedido.
